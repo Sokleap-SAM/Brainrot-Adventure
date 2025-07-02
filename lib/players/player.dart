@@ -101,7 +101,6 @@ class Player extends SpriteAnimationGroupComponent
       case PlayerDirection.none:
         current = PlayerState.idle;
         break;
-      default:
     }
 
     velocity = Vector2(directionX, 0.0);
