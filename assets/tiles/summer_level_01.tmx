@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="2" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="7">
  <tileset firstgid="1" source="summer terrain.tsx"/>
- <layer id="1" name="Tile Layer 1" width="80" height="45">
+ <layer id="1" name="Background" width="80" height="45">
   <data encoding="csv">
 1,2,1,2,3,1,2,1,2,3,1,2,3,1,1,2,25,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,2,3,1,2,3,1,2,3,1,2,3,3,1,2,3,1,2,3,3,1,2,3,1,2,3,1,2,3,1,2,3,3,1,2,3,1,2,1,2,3,1,2,1,2,3,
 13,14,13,14,15,13,14,13,14,15,13,14,15,13,13,14,25,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,14,15,13,14,15,13,14,15,13,14,15,15,13,14,15,13,14,15,15,13,14,15,13,14,15,13,14,15,13,14,15,15,13,14,15,13,14,13,14,15,13,14,13,14,15,
@@ -50,4 +50,7 @@
 25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,25,25,26,27,25,26,27,27,25,26,27,25,26,27,25,26,27,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,25,26,27,25,26,27,25,26,25,26,27,25,26,27,25,26,27,25,26,25,26,27
 </data>
  </layer>
+ <objectgroup id="2" name="SpawnPoint">
+  <object id="4" name="Player" type="Player" x="96" y="528" width="64" height="64"/>
+ </objectgroup>
 </map>

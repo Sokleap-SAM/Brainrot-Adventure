@@ -6,21 +6,23 @@ import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 
 class TestAdventure extends FlameGame {
+  @override
+  Color backgroundColor() => const Color(0xFFFFFFFF);
+
   late final CameraComponent cam;
-  final worlds = Level();
+  final worlds = Level(levelName: 'summer_level_01');
 
   @override
-  FutureOr<void> onLoad() {
+  Future<void> onLoad() async {
+    await images.loadAllImages();
+    final world = Level(levelName: 'summer_level_01');
     cam = CameraComponent.withFixedResolution(
       world: worlds,
       width: 1280,
       height: 720,
     );
+    addAll([worlds, cam]);
     cam.viewfinder.anchor = Anchor.topLeft;
-    addAll([cam, worlds]);
     return super.onLoad();
   }
-
-  @override
-  Color backgroundColor() => const Color(0xFFFFFFFF);
 }
