@@ -4,10 +4,11 @@ import 'package:flame/game.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Flame.device.fullScreen();
-  Flame.device.setLandscape();
+  await Flame.device.fullScreen();
+  await Flame.device.setLandscape();
+
   TestAdventure game = TestAdventure();
   runApp(GameWidget(game: kDebugMode ? TestAdventure() : game));
 }
