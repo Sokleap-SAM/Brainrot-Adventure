@@ -2,27 +2,32 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:brainrot_adventure/levels/level.dart';
+import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
+import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 
-class TestAdventure extends FlameGame {
+class TestAdventure extends FlameGame with HasKeyboardHandlerComponents {
   @override
-  Color backgroundColor() => const Color(0xFFFFFFFF);
+  Color backgroundColor() => const Color(0x00000000);
 
   late final CameraComponent cam;
-  final worlds = Level(levelName: 'summer_level_01');
+  Player player = Player(character: 'Wizard_Ducky');
 
   @override
   Future<void> onLoad() async {
     await images.loadAllImages();
-    final world = Level(levelName: 'summer_level_01');
+
+    final world = Level(levelName: 'summer_level_01', player: player);
+
     cam = CameraComponent.withFixedResolution(
-      world: worlds,
+      world: world,
       width: 1280,
       height: 720,
     );
-    addAll([worlds, cam]);
+    addAll([world, cam]);
     cam.viewfinder.anchor = Anchor.topLeft;
+    add(FpsTextComponent(position: Vector2(10, 10)));
     return super.onLoad();
   }
 }
