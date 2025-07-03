@@ -9,7 +9,7 @@ import 'package:flame/game.dart';
 
 class TestAdventure extends FlameGame with HasKeyboardHandlerComponents {
   @override
-  Color backgroundColor() => const Color(0xFFFFFFFF);
+  Color backgroundColor() => const Color(0x00000000);
 
   late final CameraComponent cam;
   Player player = Player(character: 'Wizard_Ducky');
@@ -27,6 +27,7 @@ class TestAdventure extends FlameGame with HasKeyboardHandlerComponents {
     );
     addAll([world, cam]);
     cam.viewfinder.anchor = Anchor.topLeft;
+    add(FpsTextComponent(position: Vector2(10, 10)));
     return super.onLoad();
   }
 }

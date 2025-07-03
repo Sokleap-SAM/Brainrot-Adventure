@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:brainrot_adventure/test_adventure.dart';
 import 'package:flame/components.dart';
-import 'package:flutter/src/services/hardware_keyboard.dart';
-import 'package:flutter/src/services/keyboard_key.g.dart';
+import 'package:flutter/services.dart';
 
 enum PlayerState { idle, running }
 
@@ -16,12 +15,12 @@ class Player extends SpriteAnimationGroupComponent
     : super(position: position);
 
   late final SpriteAnimation idleAnimation, runningAnimation;
-  final double stepTime = 0.04;
+  final double stepTime = 0.25;
 
   PlayerDirection playerDirection = PlayerDirection.none;
-  double moveSpeed = 100;
+  double moveSpeed = 150;
   Vector2 velocity = Vector2.zero();
-  bool isFacingLeft = true;
+  bool isFacingLeft = false;
 
   @override
   FutureOr<void> onLoad() {
@@ -32,6 +31,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void update(double dt) {
     updatePlayerMovement(dt);
+    print("Player position: (${position.x}, ${position.y})");
     super.update(dt);
   }
 
@@ -65,7 +65,7 @@ class Player extends SpriteAnimationGroupComponent
       PlayerState.idle: idleAnimation,
       PlayerState.running: runningAnimation,
     };
-
+    flipHorizontallyAroundCenter();
     current = PlayerState.idle;
   }
 
