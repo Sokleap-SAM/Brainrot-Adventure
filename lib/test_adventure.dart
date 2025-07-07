@@ -7,7 +7,8 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 
-class TestAdventure extends FlameGame with HasKeyboardHandlerComponents {
+class TestAdventure extends FlameGame
+    with HasKeyboardHandlerComponents, HasCollisionDetection {
   @override
   Color backgroundColor() => const Color(0x00000000);
 

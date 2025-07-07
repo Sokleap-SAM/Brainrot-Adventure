@@ -13,23 +13,22 @@
             "scaleInEditor": 1
         },
         "summer_level_01.tmx": {
-            "scale": 1.2016015625,
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 639.9791944345112,
-                "y": 359.93628295569056
+                "x": 638,
+                "y": 585.9999999999999
             }
         }
     },
     "last.imagePath": "D:/project oop/Brainrot-Adventure/assets/images/Terrain",
     "openFiles": [
-        "summer_level_01.tmx",
-        "summer terrain.tsx"
+        "summer_level_01.tmx"
     ],
     "project": "brainrot_adventure.tiled-project",
     "recentFiles": [
-        "summer terrain.tsx",
         "summer_level_01.tmx",
+        "summer terrain.tsx",
         "summer terrain_v2.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
