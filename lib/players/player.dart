@@ -51,7 +51,6 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void update(double dt) {
-    print(position.x);
     _updatePlayerMovement(dt);
     _applyGravity(dt);
     if (!isOnGround) {
@@ -175,11 +174,39 @@ class Player extends SpriteAnimationGroupComponent
     super.onCollisionEnd(other);
   }
 
+  // bool _collided(CollisionBlock block) {
+  //   return (position.y < block.y + block.height &&
+  //       position.y + height > block.y &&
+  //       position.x < block.x + block.width &&
+  //       position.x + width > block.x);
+  // }
+
   void _resolveCollision(CollisionBlock block) {
     final playerRect = toAbsoluteRect();
     final blockRect = block.toAbsoluteRect();
 
-    // Calculate overlap amounts
+    //position player y < position block y + blockheight
+    //
+    // position player x < block x + blockwidth
+    // position player x + playerwidth > blockx
+    // if (_collided(block)) {
+    //   if (velocity.x > 0) {
+    //     velocity.x = 0;
+    //     position.x = block.x;
+    //   } else if (velocity.x < 0) {
+    //     velocity.x = 0;
+    //     position.x = block.x + block.width;
+    //   } else if (velocity.y < 0) {
+    //     velocity.y = 0;
+    //     position.y = block.y - width;
+    //   } else if (velocity.y > 0) {
+    //     velocity.y = 0;
+    //     position.y = block.y;
+    //     isOnGround = true;
+    //     isJumping = false;
+    //   }
+    // }
+    //Calculate overlap amounts
     final double overlapX =
         (playerRect.width + blockRect.width) / 2 -
         (playerRect.center.dx - blockRect.center.dx).abs();
@@ -192,16 +219,18 @@ class Player extends SpriteAnimationGroupComponent
       // Horizontal collision
       if (playerRect.center.dx < blockRect.center.dx) {
         // Colliding from left
-        position.x = blockRect.left;
+
+        position.x = blockRect.left + 12;
       } else {
         // Colliding from right
-        position.x = blockRect.right;
+        position.x = blockRect.right - 12;
       }
       velocity.x = 0; // Stop horizontal movement
     } else {
       // Vertical collision
       if (playerRect.center.dy < blockRect.center.dy) {
         // Colliding from above (landing)
+        print("before:${position.y}");
         position.y = blockRect.top - playerRect.height;
         velocity.y = 0;
         isOnGround = true;
@@ -212,6 +241,8 @@ class Player extends SpriteAnimationGroupComponent
         velocity.y = 0;
       }
     }
+
+    // print("After: $overlapY | $overlapX");
   }
 
   // void _checkHorizontalCollisions() {
