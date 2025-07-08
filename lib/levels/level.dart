@@ -18,7 +18,6 @@ class Level extends World {
     add(level);
     _addSpawnPoint();
     _addCollision();
-    // player.blocks = collisionBlocks;
     return super.onLoad();
   }
 
@@ -50,12 +49,7 @@ class Level extends World {
       );
       collisionBlocks.add(block);
       add(block);
-      // final block = CollisionBlock(
-      //   position: Vector2(collision.x, collision.y),
-      //   size: Vector2(collision.width, collision.height),
-      // );
-      // collisionBlocks.add(block);
     }
-    // player.collisionBlocks = collisionBlocks;
+    player.collisionBlocks = collisionBlocks;
   }
 }

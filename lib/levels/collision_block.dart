@@ -1,7 +1,8 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-class CollisionBlock extends PositionComponent with CollisionCallbacks {
+class CollisionBlock extends PositionComponent {
+  // with CollisionCallbacks {
   bool isPlatform;
 
   CollisionBlock({
@@ -10,16 +11,16 @@ class CollisionBlock extends PositionComponent with CollisionCallbacks {
     this.isPlatform = false,
   }) : super(position: position, size: size);
 
-  @override
-  Future<void> onLoad() async {
-    await super.onLoad();
-    add(
-      RectangleHitbox(
-        collisionType: isPlatform
-            ? CollisionType.passive
-            : CollisionType.active,
-      )..debugMode = true,
-    );
-    debugMode = true;
-  }
+  // @override
+  // Future<void> onLoad() async {
+  //   // await super.onLoad();
+  //   // add(
+  //   //   RectangleHitbox(
+  //   //     collisionType: isPlatform
+  //   //         ? CollisionType.passive
+  //   //         : CollisionType.active,
+  //   //   )..debugMode = true,
+  //   // );
+  // debugMode = true;
+  // }
 }

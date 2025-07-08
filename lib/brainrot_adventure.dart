@@ -7,9 +7,7 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 
-
-class BrainrotAdventure extends FlameGame
-    with HasKeyboardHandlerComponents, HasCollisionDetection {
+class BrainrotAdventure extends FlameGame with HasKeyboardHandlerComponents {
   @override
   Color backgroundColor() => const Color(0x00000000);
 
