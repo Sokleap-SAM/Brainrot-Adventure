@@ -1,4 +1,4 @@
-import 'package:brainrot_adventure/test_adventure.dart';
+import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/foundation.dart';
@@ -9,6 +9,6 @@ void main() async {
   await Flame.device.fullScreen();
   await Flame.device.setLandscape();
 
-  TestAdventure game = TestAdventure();
-  runApp(GameWidget(game: kDebugMode ? TestAdventure() : game));
+  BrainrotAdventure game = BrainrotAdventure();
+  runApp(GameWidget(game: kDebugMode ? BrainrotAdventure() : game));
 }
