@@ -1,12 +1,13 @@
 import 'dart:async';
 
 import 'package:brainrot_adventure/levels/collision_block.dart';
+// import 'package:brainrot_adventure/levels/collision_system.dart';
 import 'package:brainrot_adventure/test_adventure.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
 
-enum PlayerState { idle, running, jumping, falling }
+enum PlayerState { idle, running, jumping, falling, crouch }
 
 enum PlayerDirection { left, right, none }
 
@@ -33,7 +34,13 @@ class Player extends SpriteAnimationGroupComponent
   final double terminalVelocity = 300;
 
   bool isOnGround = false;
-  // List<CollisionBlock> blocks = [];
+  bool isCrouch = false;
+  // List<CollisionBlock> collisionBlocks = [];
+  // RectangleHitbox playerHitBox = RectangleHitbox(
+  //   position: Vector2(10, 6),
+  //   size: Vector2(44, 58),
+  //   anchor: Anchor.topLeft,
+  // );
 
   @override
   FutureOr<void> onLoad() {
@@ -45,6 +52,8 @@ class Player extends SpriteAnimationGroupComponent
         position: Vector2(width / 2, height), // Center position
       )..debugMode = true,
     );
+    // add(playerHitBox);
+    debugMode = true;
 
     return super.onLoad();
   }
@@ -52,6 +61,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void update(double dt) {
     _updatePlayerMovement(dt);
+    // _checkHorizontalCollisions();
     _applyGravity(dt);
     if (!isOnGround) {
       current = velocity.y > 0 ? PlayerState.falling : PlayerState.jumping;
@@ -185,28 +195,6 @@ class Player extends SpriteAnimationGroupComponent
     final playerRect = toAbsoluteRect();
     final blockRect = block.toAbsoluteRect();
 
-    //position player y < position block y + blockheight
-    //
-    // position player x < block x + blockwidth
-    // position player x + playerwidth > blockx
-    // if (_collided(block)) {
-    //   if (velocity.x > 0) {
-    //     velocity.x = 0;
-    //     position.x = block.x;
-    //   } else if (velocity.x < 0) {
-    //     velocity.x = 0;
-    //     position.x = block.x + block.width;
-    //   } else if (velocity.y < 0) {
-    //     velocity.y = 0;
-    //     position.y = block.y - width;
-    //   } else if (velocity.y > 0) {
-    //     velocity.y = 0;
-    //     position.y = block.y;
-    //     isOnGround = true;
-    //     isJumping = false;
-    //   }
-    // }
-    //Calculate overlap amounts
     final double overlapX =
         (playerRect.width + blockRect.width) / 2 -
         (playerRect.center.dx - blockRect.center.dx).abs();
@@ -216,21 +204,23 @@ class Player extends SpriteAnimationGroupComponent
 
     // Determine which side we're colliding from
     if (overlapX < overlapY) {
-      // Horizontal collision
-      if (playerRect.center.dx < blockRect.center.dx) {
-        // Colliding from left
-
-        position.x = blockRect.left + 12;
+      if (block.isPlatform) {
       } else {
-        // Colliding from right
-        position.x = blockRect.right - 12;
+        // Horizontal collision
+        if (playerRect.center.dx < blockRect.center.dx) {
+          // Colliding from left
+
+          position.x = blockRect.left + 12;
+        } else {
+          // Colliding from right
+          position.x = blockRect.right - 12;
+        }
+        velocity.x = 0; // Stop horizontal movement
       }
-      velocity.x = 0; // Stop horizontal movement
     } else {
       // Vertical collision
-      if (playerRect.center.dy < blockRect.center.dy) {
+      if (playerRect.center.dy < blockRect.center.dy && overlapX != 0) {
         // Colliding from above (landing)
-        print("before:${position.y}");
         position.y = blockRect.top - playerRect.height;
         velocity.y = 0;
         isOnGround = true;
@@ -241,25 +231,26 @@ class Player extends SpriteAnimationGroupComponent
         velocity.y = 0;
       }
     }
-
     // print("After: $overlapY | $overlapX");
   }
 
   // void _checkHorizontalCollisions() {
   //   for (final block in collisionBlocks) {
   //     if (!block.isPlatform) {
-  //       if (CollisionSystem.checkCollision(this, block)) {
+  //       if (checkCollision(this, block)) {
+  //         print(velocity.x);
   //         if (velocity.x > 0) {
-  //           position.x = block.x;
   //           velocity.x = 0;
-  //           break;
+  //           position.x = block.x + 9;
+  //           // print(
+  //           //   "player: $position\n,playerBox: ${playerHitBox.position}\n,block: ${block.position}\n",
+  //           // );
   //         }
   //         if (velocity.x < 0) {
-  //           position.x = block.x + block.width;
   //           velocity.x = 0;
-  //           break;
+  //           position.x = block.x + block.width - playerHitBox.position.x;
   //         }
-  //       }
+  //       } else {}
   //     }
   //   }
   // }
@@ -285,12 +276,5 @@ class Player extends SpriteAnimationGroupComponent
   //       }
   //     }
   //   }
-  // }
-
-  // bool checkCollision(Component player, CollisionBlock block) {
-  //   final playerBounds = toAbsoluteRect();
-  //   final blockBounds = block.toRect();
-
-  //   return playerBounds.overlaps(blockBounds);
   // }
 }

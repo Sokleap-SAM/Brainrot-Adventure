@@ -42,14 +42,14 @@ class Level extends World {
     if (collisionLayer == null) return;
 
     for (final collision in collisionLayer.objects) {
-      final isPlatform = collision.class_ == 'Platform';
-      final platform = CollisionBlock(
+      final isPlatform = collision.class_ == 'platform';
+      final block = CollisionBlock(
         position: Vector2(collision.x, collision.y),
         size: Vector2(collision.width, collision.height),
         isPlatform: isPlatform,
       );
-      collisionBlocks.add(platform);
-      add(platform);
+      collisionBlocks.add(block);
+      add(block);
       // final block = CollisionBlock(
       //   position: Vector2(collision.x, collision.y),
       //   size: Vector2(collision.width, collision.height),
