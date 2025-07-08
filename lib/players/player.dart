@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:brainrot_adventure/levels/collision_block.dart';
-import 'package:brainrot_adventure/test_adventure.dart';
+import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +11,7 @@ enum PlayerState { idle, running, jumping, falling }
 enum PlayerDirection { left, right, none }
 
 class Player extends SpriteAnimationGroupComponent
-    with HasGameReference<TestAdventure>, KeyboardHandler, CollisionCallbacks {
+    with HasGameReference<BrainrotAdventure>, KeyboardHandler, CollisionCallbacks {
   String character;
   Player({position, this.character = "Wizard_Ducky"})
     : super(position: position);
