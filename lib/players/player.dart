@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:brainrot_adventure/levels/collision_block.dart';
-import 'package:brainrot_adventure/test_adventure.dart';
+import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
