@@ -14,7 +14,12 @@ class CollisionBlock extends PositionComponent with CollisionCallbacks {
   Future<void> onLoad() async {
     await super.onLoad();
     add(
-      RectangleHitbox(collisionType: CollisionType.passive)..debugMode = true,
+      RectangleHitbox(
+        collisionType: isPlatform
+            ? CollisionType.passive
+            : CollisionType.active,
+      )..debugMode = true,
     );
+    debugMode = true;
   }
 }
