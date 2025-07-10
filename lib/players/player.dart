@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:brainrot_adventure/levels/collision_block.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:brainrot_adventure/levels/collision_system.dart';
+import 'package:brainrot_adventure/levels/summer_objects.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
@@ -12,7 +13,7 @@ enum PlayerState { idle, running, jumping, falling, crouch }
 enum PlayerDirection { left, right, none }
 
 class Player extends SpriteAnimationGroupComponent
-    with HasGameReference<BrainrotAdventure>, KeyboardHandler {
+    with HasGameReference<BrainrotAdventure>, KeyboardHandler, CollisionCallbacks {
   String character;
   Player({position, this.character = "Wizard_Ducky"})
     : super(position: position);
@@ -31,7 +32,7 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isJumping = false;
   final double gravity = 9.8;
-  final double jumpForce = -400.0;
+  final double jumpForce = -800.0;
   final double terminalVelocity = 300;
 
   bool isOnGround = false;
@@ -122,14 +123,14 @@ class Player extends SpriteAnimationGroupComponent
     runningAnimation = _spriteAnimation('run', 4);
     jumpingAnimation = _spriteAnimation('jump', 1);
     fallingAnimation = _spriteAnimation('fall', 1);
-    crouchAnimation = _spriteAnimation('crouch', 1);
+    // crouchAnimation = _spriteAnimation('crouch', 1);
 
     animations = {
       PlayerState.idle: idleAnimation,
       PlayerState.running: runningAnimation,
       PlayerState.jumping: jumpingAnimation,
       PlayerState.falling: fallingAnimation,
-      PlayerState.crouch: fallingAnimation,
+      // PlayerState.crouch: fallingAnimation,
     };
     flipHorizontallyAroundCenter();
     current = PlayerState.idle;
@@ -214,7 +215,6 @@ class Player extends SpriteAnimationGroupComponent
         }
       } else {
         if (checkCollision(this, block)) {
-          print(velocity.y);
           if (velocity.y > 0) {
             velocity.y = 0;
             position.y =
@@ -228,11 +228,16 @@ class Player extends SpriteAnimationGroupComponent
             position.y = block.y + block.height - playerHitBox.position.y;
             break;
           }
-          if (velocity.y == 0) {
-            print(0);
-          }
         }
       }
     }
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
+    if(other is SummerObjects){
+      other.collideWithPlayer();
+    }
+    super.onCollision(intersectionPoints, other);
   }
 }

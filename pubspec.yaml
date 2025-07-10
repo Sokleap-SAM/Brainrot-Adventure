@@ -64,7 +64,7 @@ flutter:
     - assets/images/Player/Wizard_Ducky/
     - assets/images/Terrain/
     - assets/tiles/
-    - assets/images/Items/SummerObjects/
+    - assets/images/Items/SummerObjects/ 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
