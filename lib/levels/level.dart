@@ -45,6 +45,7 @@ class Level extends World {
           final enemy = Enemy(
             position: spawnPoint.position,
             size: spawnPoint.size,
+            enemyName: spawnPoint.name,
           );
           add(enemy);
           break;

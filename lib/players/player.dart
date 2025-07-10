@@ -4,6 +4,7 @@ import 'package:brainrot_adventure/levels/collision_block.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:brainrot_adventure/levels/collision_system.dart';
 import 'package:brainrot_adventure/levels/summer_objects.dart';
+import 'package:brainrot_adventure/players/enemy.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
@@ -27,6 +28,8 @@ class Player extends SpriteAnimationGroupComponent
       fallingAnimation,
       crouchAnimation;
   final double stepTime = 0.25;
+  // double _accumulator = 0.0;
+  // final double _fixedDeltaTime = 1 / 60;
 
   PlayerDirection playerDirection = PlayerDirection.none;
   double moveSpeed = 150.0;
@@ -35,7 +38,7 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isJumping = false;
   final double gravity = 9.8;
-  final double jumpForce = -800.0;
+  final double jumpForce = -400.0;
   final double terminalVelocity = 300;
 
   bool isOnGround = false;
@@ -58,11 +61,13 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void update(double dt) {
+    // _accumulator += dt;
+
+    // while (_accumulator >= _fixedDeltaTime) {
     _updatePlayerMovement(dt);
     _checkHorizontalCollisions();
     _applyGravity(dt);
     _checkVerticalCollisions();
-
     if (isCrouch) {
       current = PlayerState.crouch;
     } else if (!isOnGround) {
@@ -70,7 +75,10 @@ class Player extends SpriteAnimationGroupComponent
     } else if (isOnGround) {
       current = velocity.x != 0 ? PlayerState.running : PlayerState.idle;
     }
+    // _accumulator -= _fixedDeltaTime;
+    // super.update(_fixedDeltaTime);
     super.update(dt);
+    // }
   }
 
   @override
@@ -133,7 +141,7 @@ class Player extends SpriteAnimationGroupComponent
     runningAnimation = _spriteAnimation('run', 4);
     jumpingAnimation = _spriteAnimation('jump', 1);
     fallingAnimation = _spriteAnimation('fall', 1);
-    // crouchAnimation = _spriteAnimation('crouch', 1);
+    crouchAnimation = _spriteAnimation('crouch', 1);
 
     animations = {
       PlayerState.idle: idleAnimation,
@@ -248,8 +256,13 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     if (other is SummerObjects) {
-      other.collideWithPlayer();
+      other.objectCollideWithPlayer();
+    }
+    if (other is Enemy) {
+      other.enemyCollidedWithPlayer();
     }
     super.onCollision(intersectionPoints, other);
   }
+
+  void respawn() {}
 }
