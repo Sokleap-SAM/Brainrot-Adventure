@@ -13,7 +13,10 @@ enum PlayerState { idle, running, jumping, falling, crouch }
 enum PlayerDirection { left, right, none }
 
 class Player extends SpriteAnimationGroupComponent
-    with HasGameReference<BrainrotAdventure>, KeyboardHandler, CollisionCallbacks {
+    with
+        HasGameReference<BrainrotAdventure>,
+        KeyboardHandler,
+        CollisionCallbacks {
   String character;
   Player({position, this.character = "Wizard_Ducky"})
     : super(position: position);
@@ -74,7 +77,7 @@ class Player extends SpriteAnimationGroupComponent
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     _updateHorizontalDirection(keysPressed);
     _handleJumpInput(keysPressed);
-    // _handleCrouchInput(keysPressed);
+    _handleCrouchInput(keysPressed);
     return super.onKeyEvent(event, keysPressed);
   }
 
@@ -102,8 +105,7 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.space) ||
         keysPressed.contains(LogicalKeyboardKey.arrowUp);
 
-    if (isJumpKeyPressed && !isJumping && isOnGround) {
-      // Added isOnGround check
+    if (isJumpKeyPressed && !isJumping && isOnGround && !isCrouch) {
       isJumping = true;
       isOnGround = false;
       velocity.y = jumpForce;
@@ -116,6 +118,14 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.keyS);
 
     isCrouch = isDownKeyPressed && isOnGround;
+    if (isCrouch) {
+      print("a");
+      playerHitBox.size = Vector2(34, 34); // Width remains same, height reduced
+      playerHitBox.position = Vector2(15, 30);
+    } else {
+      playerHitBox.size = Vector2(44, 58);
+      playerHitBox.position = Vector2(10, 6);
+    }
   }
 
   void _loadAllAnimation() {
@@ -130,7 +140,7 @@ class Player extends SpriteAnimationGroupComponent
       PlayerState.running: runningAnimation,
       PlayerState.jumping: jumpingAnimation,
       PlayerState.falling: fallingAnimation,
-      // PlayerState.crouch: fallingAnimation,
+      PlayerState.crouch: crouchAnimation,
     };
     flipHorizontallyAroundCenter();
     current = PlayerState.idle;
@@ -150,6 +160,8 @@ class Player extends SpriteAnimationGroupComponent
   void _updatePlayerMovement(double dt) {
     if (!isCrouch) {
       velocity.x = _getHorizontalVelocity();
+    } else {
+      velocity.x = 0;
     }
     _updateFacingDirection();
     position.x += velocity.x * dt;
@@ -235,7 +247,7 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
-    if(other is SummerObjects){
+    if (other is SummerObjects) {
       other.collideWithPlayer();
     }
     super.onCollision(intersectionPoints, other);

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:brainrot_adventure/levels/collision_block.dart';
 import 'package:brainrot_adventure/levels/summer_objects.dart';
+import 'package:brainrot_adventure/players/enemy.dart';
 import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
@@ -37,8 +38,15 @@ class Level extends World {
             summerobject: spawnPoint.name,
             size: Vector2(spawnPoint.width, spawnPoint.height),
             position: Vector2(spawnPoint.x, spawnPoint.y),
-          );  
+          );
           add(summerObject);
+          break;
+        case 'Enemy':
+          final enemy = Enemy(
+            position: spawnPoint.position,
+            size: spawnPoint.size,
+          );
+          add(enemy);
           break;
         default:
       }

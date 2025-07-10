@@ -13,11 +13,11 @@
             "scaleInEditor": 1
         },
         "summer_level_01.tmx": {
-            "scale": 1,
+            "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 709.5,
-                "y": 414.5
+                "x": 634,
+                "y": 377.99999999999994
             }
         }
     },
