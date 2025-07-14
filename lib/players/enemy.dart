@@ -82,8 +82,4 @@ class Enemy extends SpriteAnimationGroupComponent
 
     position.x += movement * dt;
   }
-
-  void enemyCollidedWithPlayer() async {
-    player.respawn();
-  }
 }

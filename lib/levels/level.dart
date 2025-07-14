@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:brainrot_adventure/levels/collision_block.dart';
+import 'package:brainrot_adventure/levels/portal.dart';
 import 'package:brainrot_adventure/levels/summer_objects.dart';
 import 'package:brainrot_adventure/players/enemy.dart';
 import 'package:brainrot_adventure/players/player.dart';
@@ -30,7 +31,7 @@ class Level extends World {
     for (final spawnPoint in spawnPointLayer.objects) {
       switch (spawnPoint.class_) {
         case 'Player':
-          player.position = Vector2(spawnPoint.x, spawnPoint.y);
+          player.setSpawnPoint(Vector2(spawnPoint.x, spawnPoint.y));
           add(player);
           break;
         case 'Object':
@@ -48,6 +49,14 @@ class Level extends World {
             enemyName: spawnPoint.name,
           );
           add(enemy);
+          break;
+        case 'Portal':
+          final portal = Portal(
+            position: spawnPoint.position,
+            size: spawnPoint.size,
+            name: spawnPoint.name,
+          );
+          add(portal);
           break;
         default:
       }

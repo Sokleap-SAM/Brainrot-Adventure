@@ -4,15 +4,14 @@ import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-class SummerObjects extends SpriteAnimationComponent
+class Portal extends SpriteAnimationComponent
     with HasGameReference<BrainrotAdventure>, CollisionCallbacks {
-  final String summerobject;
-  bool isCollected = false;
+  String name;
 
-  SummerObjects({super.position, super.size, this.summerobject = 'BeachBall'});
+  Portal({super.position, super.size, this.name = "BeachBall"});
 
   final double stepTime = 0.40;
-  RectangleHitbox objectHitBox = RectangleHitbox(
+  RectangleHitbox portalHitBox = RectangleHitbox(
     position: Vector2(14, 12),
     size: Vector2(36, 40),
     anchor: Anchor.topLeft,
@@ -21,11 +20,11 @@ class SummerObjects extends SpriteAnimationComponent
 
   @override
   FutureOr<void> onLoad() {
-    add(objectHitBox);
+    add(portalHitBox);
     debugMode = true;
     priority = -1;
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Items/SummerObjects/$summerobject.png'),
+      game.images.fromCache('Items/SummerObjects/BeachBall.png'),
       SpriteAnimationData.sequenced(
         amount: 4,
         stepTime: stepTime,
@@ -33,12 +32,5 @@ class SummerObjects extends SpriteAnimationComponent
       ),
     );
     return super.onLoad();
-  }
-
-  void objectCollideWithPlayer() async {
-    if (!isCollected) {
-      isCollected = true;
-      removeFromParent();
-    }
   }
 }

@@ -12,23 +12,48 @@ class BrainrotAdventure extends FlameGame
   @override
   Color backgroundColor() => const Color(0x00000000);
 
-  late final CameraComponent cam;
-  Player player = Player(character: 'Wizard_Ducky');
+  late CameraComponent cam;
+  List<String> levelNames = ['summer_level_01', 'summer_level_01'];
+  int currentLevelIndex = 0;
+  late Player player;
 
   @override
   Future<void> onLoad() async {
     await images.loadAllImages();
 
-    final world = Level(levelName: 'summer_level_01', player: player);
-
-    cam = CameraComponent.withFixedResolution(
-      world: world,
-      width: 1280,
-      height: 720,
-    );
-    addAll([world, cam]);
-    cam.viewfinder.anchor = Anchor.topLeft;
+    _loadLevel();
     add(FpsTextComponent(position: Vector2(10, 10)));
     return super.onLoad();
+  }
+
+  void loadNextLevel() {
+    removeWhere((component) => component is Level);
+
+    if (currentLevelIndex < levelNames.length - 1) {
+      currentLevelIndex++;
+      _loadLevel();
+    } else {
+      currentLevelIndex = 0;
+      _loadLevel();
+    }
+  }
+
+  void _loadLevel() {
+    Future.delayed(const Duration(seconds: 1), () {
+      player = Player(character: 'Wizard_Ducky');
+      Level world = Level(
+        player: player,
+        levelName: levelNames[currentLevelIndex],
+      );
+
+      cam = CameraComponent.withFixedResolution(
+        world: world,
+        width: 1280,
+        height: 720,
+      );
+      cam.viewfinder.anchor = Anchor.topLeft;
+
+      addAll([cam, world]);
+    });
   }
 }

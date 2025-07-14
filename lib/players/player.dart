@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:brainrot_adventure/levels/collision_block.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:brainrot_adventure/levels/collision_system.dart';
+import 'package:brainrot_adventure/levels/portal.dart';
 import 'package:brainrot_adventure/levels/summer_objects.dart';
 import 'package:brainrot_adventure/players/enemy.dart';
 import 'package:flame/collisions.dart';
@@ -43,6 +44,9 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isOnGround = false;
   bool isCrouch = false;
+  bool reachPortal = false;
+  bool gotHit = false;
+  Vector2 startingPosition = Vector2.all(0);
   List<CollisionBlock> collisionBlocks = [];
   RectangleHitbox playerHitBox = RectangleHitbox(
     position: Vector2(10, 6),
@@ -64,16 +68,18 @@ class Player extends SpriteAnimationGroupComponent
     // _accumulator += dt;
 
     // while (_accumulator >= _fixedDeltaTime) {
-    _updatePlayerMovement(dt);
-    _checkHorizontalCollisions();
-    _applyGravity(dt);
-    _checkVerticalCollisions();
-    if (isCrouch) {
-      current = PlayerState.crouch;
-    } else if (!isOnGround) {
-      current = velocity.y > 0 ? PlayerState.falling : PlayerState.jumping;
-    } else if (isOnGround) {
-      current = velocity.x != 0 ? PlayerState.running : PlayerState.idle;
+    if (!gotHit) {
+      _updatePlayerMovement(dt);
+      _checkHorizontalCollisions();
+      _applyGravity(dt);
+      _checkVerticalCollisions();
+      if (isCrouch) {
+        current = PlayerState.crouch;
+      } else if (!isOnGround) {
+        current = velocity.y > 0 ? PlayerState.falling : PlayerState.jumping;
+      } else if (isOnGround) {
+        current = velocity.x != 0 ? PlayerState.running : PlayerState.idle;
+      }
     }
     // _accumulator -= _fixedDeltaTime;
     // super.update(_fixedDeltaTime);
@@ -87,6 +93,11 @@ class Player extends SpriteAnimationGroupComponent
     _handleJumpInput(keysPressed);
     _handleCrouchInput(keysPressed);
     return super.onKeyEvent(event, keysPressed);
+  }
+
+  void setSpawnPoint(Vector2 spawnPos) {
+    startingPosition = spawnPos;
+    position = spawnPos;
   }
 
   void _updateHorizontalDirection(Set<LogicalKeyboardKey> keysPressed) {
@@ -127,7 +138,6 @@ class Player extends SpriteAnimationGroupComponent
 
     isCrouch = isDownKeyPressed && isOnGround;
     if (isCrouch) {
-      print("a");
       playerHitBox.size = Vector2(34, 34); // Width remains same, height reduced
       playerHitBox.position = Vector2(15, 30);
     } else {
@@ -254,15 +264,37 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   @override
-  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
-    if (other is SummerObjects) {
-      other.objectCollideWithPlayer();
+  void onCollisionStart(
+    Set<Vector2> intersectionPoints,
+    PositionComponent other,
+  ) {
+    if (!reachPortal) {
+      if (other is SummerObjects) {
+        other.objectCollideWithPlayer();
+      }
+      if (other is Enemy) {
+        _respawn();
+      }
+      if (other is Portal) {
+        _reachPortal();
+      }
+      super.onCollisionStart(intersectionPoints, other);
     }
-    if (other is Enemy) {
-      other.enemyCollidedWithPlayer();
-    }
-    super.onCollision(intersectionPoints, other);
   }
 
-  void respawn() {}
+  void _reachPortal() async {
+    reachPortal = true;
+    const waitToChangeDuration = Duration(seconds: 3);
+    Future.delayed(waitToChangeDuration, () => game.loadNextLevel());
+  }
+
+  void _respawn() {
+    gotHit = true;
+    velocity = Vector2.all(0);
+    position = startingPosition;
+    current = PlayerState.idle;
+    Future.delayed(Duration(milliseconds: 500), () {
+      gotHit = false;
+    });
+  }
 }
