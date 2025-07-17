@@ -1,11 +1,17 @@
+import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart'; // Import your game class
 
 class MenuOverlay extends StatelessWidget {
   // A reference to the game instance is often useful for controlling game state
   final BrainrotAdventure game;
+  final AudioManager audioManager;
 
-  const MenuOverlay({super.key, required this.game});
+  const MenuOverlay({
+    super.key,
+    required this.game,
+    required this.audioManager,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +33,22 @@ class MenuOverlay extends StatelessWidget {
             const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () {
-                game.overlays.remove('MenuOverlay'); // Remove the overlay
+                game.overlays.remove('MenuOverlay');
+                audioManager.resumeBgm(); // Remove the overlay
                 game.resumeEngine(); // Resume the game
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                minimumSize: const Size(220, 60), // <-- Set fixed size for all buttons
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                minimumSize: const Size(
+                  220,
+                  60,
+                ), // <-- Set fixed size for all buttons
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 20,
+                ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), 
+                  borderRadius: BorderRadius.circular(10),
                 ),
               ),
               child: const Text(
@@ -43,7 +56,7 @@ class MenuOverlay extends StatelessWidget {
                 style: TextStyle(fontSize: 24.0, color: Colors.white),
               ),
             ),
-            const SizedBox(height: 20), 
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 // Handle restart game logic
@@ -52,12 +65,18 @@ class MenuOverlay extends StatelessWidget {
                 game.resumeEngine();
                 // Or if you want to completely restart the game, you might do something like:
                 // game.resetGame(); // A method you'd need to implement in BrainrotAdventure
-                print('Restart Game'); 
+                print('Restart Game');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
-                minimumSize: const Size(220, 60), // <-- Set fixed size for all buttons
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                minimumSize: const Size(
+                  220,
+                  60,
+                ), // <-- Set fixed size for all buttons
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 20,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -75,8 +94,14 @@ class MenuOverlay extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
-                minimumSize: const Size(220, 60), // <-- Set fixed size for all buttons
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                minimumSize: const Size(
+                  220,
+                  60,
+                ), // <-- Set fixed size for all buttons
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 20,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),

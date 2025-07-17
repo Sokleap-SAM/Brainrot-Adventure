@@ -1,4 +1,5 @@
 import 'package:brainrot_adventure/brainrot_adventure.dart';
+import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:brainrot_adventure/levels/menu_overlay.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Brainrot Adventure',
-      theme: ThemeData(primarySwatch: Colors.blue), 
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: GameWidget<BrainrotAdventure>(
         game: game,
         // Define your overlays here
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
           'MenuOverlay': (BuildContext context, BrainrotAdventure game) {
             return MenuOverlay(
               game: game,
+              audioManager: game.audioManager,
             ); // Pass the game instance to your overlay
           },
           // Add other overlays here if you have them (e.g., 'GameOverOverlay')

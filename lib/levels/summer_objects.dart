@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:brainrot_adventure/brainrot_adventure.dart';
+import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
@@ -35,9 +36,10 @@ class SummerObjects extends SpriteAnimationComponent
     return super.onLoad();
   }
 
-  void objectCollideWithPlayer() async {
+  void objectCollideWithPlayer(AudioManager audioManager) async {
     if (!isCollected) {
       isCollected = true;
+      audioManager.playSfx('collectObject.wav', 1);
       removeFromParent();
     }
   }

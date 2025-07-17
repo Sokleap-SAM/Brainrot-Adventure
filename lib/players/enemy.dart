@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:brainrot_adventure/brainrot_adventure.dart';
-import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
@@ -17,7 +16,6 @@ class Enemy extends SpriteAnimationGroupComponent
   double leftRange = 16 * 10;
   double rightRange = 16 * 10;
   double movement = -100;
-  final player = Player();
   RectangleHitbox enemyHitBox = RectangleHitbox(
     position: Vector2(8, 34),
     size: Vector2(48, 30),

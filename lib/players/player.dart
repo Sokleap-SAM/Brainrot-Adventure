@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:brainrot_adventure/levels/collision_block.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:brainrot_adventure/levels/collision_system.dart';
@@ -20,8 +21,11 @@ class Player extends SpriteAnimationGroupComponent
         KeyboardHandler,
         CollisionCallbacks {
   String character;
-  Player({position, this.character = "Wizard_Ducky"})
-    : super(position: position);
+  Player({
+    super.position,
+    this.character = "Wizard_Ducky",
+    required this.audioManager,
+  });
 
   late final SpriteAnimation idleAnimation,
       runningAnimation,
@@ -46,6 +50,7 @@ class Player extends SpriteAnimationGroupComponent
   bool isCrouch = false;
   bool reachPortal = false;
   bool gotHit = false;
+
   Vector2 startingPosition = Vector2.all(0);
   List<CollisionBlock> collisionBlocks = [];
   RectangleHitbox playerHitBox = RectangleHitbox(
@@ -54,8 +59,11 @@ class Player extends SpriteAnimationGroupComponent
     anchor: Anchor.topLeft,
   );
 
+  final AudioManager audioManager;
+
   @override
   FutureOr<void> onLoad() {
+    audioManager.startBgm('Pixel Daydream.mp3', 0.4);
     _loadAllAnimation();
     add(playerHitBox);
     debugMode = true;
@@ -68,7 +76,7 @@ class Player extends SpriteAnimationGroupComponent
     // _accumulator += dt;
 
     // while (_accumulator >= _fixedDeltaTime) {
-    if (!gotHit) {
+    if (!gotHit && !reachPortal) {
       _updatePlayerMovement(dt);
       _checkHorizontalCollisions();
       _applyGravity(dt);
@@ -125,6 +133,7 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.arrowUp);
 
     if (isJumpKeyPressed && !isJumping && isOnGround && !isCrouch) {
+      audioManager.playSfx('jump.wav', 0.4);
       isJumping = true;
       isOnGround = false;
       velocity.y = jumpForce;
@@ -270,26 +279,31 @@ class Player extends SpriteAnimationGroupComponent
   ) {
     if (!reachPortal) {
       if (other is SummerObjects) {
-        other.objectCollideWithPlayer();
+        other.objectCollideWithPlayer(audioManager);
       }
       if (other is Enemy) {
         _respawn();
       }
       if (other is Portal) {
-        _reachPortal();
+        _reachPortal(other.getPortalType());
       }
       super.onCollisionStart(intersectionPoints, other);
     }
   }
 
-  void _reachPortal() async {
+  void _reachPortal(bool isStartingPortal) async {
     reachPortal = true;
-    const waitToChangeDuration = Duration(seconds: 3);
-    Future.delayed(waitToChangeDuration, () => game.loadNextLevel());
+    const waitToChangeDuration = Duration(seconds: 1);
+    velocity = Vector2.all(0);
+    Future.delayed(
+      waitToChangeDuration,
+      () => game.loadNextLevel(isStartingPortal),
+    );
   }
 
   void _respawn() {
     gotHit = true;
+    audioManager.playSfx('hit.wav', 1);
     velocity = Vector2.all(0);
     position = startingPosition;
     current = PlayerState.idle;
@@ -298,8 +312,3 @@ class Player extends SpriteAnimationGroupComponent
     });
   }
 }
-
-
-
-
-

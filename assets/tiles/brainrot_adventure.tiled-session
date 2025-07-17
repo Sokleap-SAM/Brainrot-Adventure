@@ -1,5 +1,9 @@
 {
-    "activeFile": "summer_level_01.tmx",
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "summer_level_01_part2.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -13,21 +17,45 @@
             "scaleInEditor": 1
         },
         "summer_level_01.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 591.5,
-                "y": -23.5
+                "x": 1043.5,
+                "y": 344.5
+            }
+        },
+        "summer_level_01_part2.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 190,
+                "y": 449.99999999999994
             }
         }
     },
     "last.imagePath": "D:/project oop/Brainrot-Adventure/assets/images/Terrain",
+    "map.height": 45,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 80,
     "openFiles": [
-        "summer_level_01.tmx"
+        "summer_level_01.tmx",
+        "summer_level_01_part2.tmx"
     ],
     "project": "brainrot_adventure.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
         "summer_level_01.tmx",
+        "summer_level_01_part2.tmx",
         "summer terrain.tsx",
         "summer terrain_v2.tsx"
     ],

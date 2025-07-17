@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="100">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="80" height="45" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="98">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Background" width="80" height="45">
   <data encoding="csv">
@@ -54,7 +54,11 @@
   <object id="4" name="Player" type="Player" x="528" y="480" width="64" height="64"/>
   <object id="85" name="BeachBall" type="Object" x="599.5" y="191.75" width="64" height="64"/>
   <object id="93" name="Chubby Buck Tooth" type="Enemy" x="600" y="64" width="64" height="64"/>
-  <object id="96" name="Portal" type="Portal" x="864" y="224" width="64" height="64"/>
+  <object id="96" type="Portal" x="1168" y="368" width="64" height="64">
+   <properties>
+    <property name="isStartingPortal" type="bool" value="false"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="Collision">
   <object id="7" x="0" y="0" width="32" height="720"/>

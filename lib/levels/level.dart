@@ -17,7 +17,7 @@ class Level extends World{
 
   @override
   Future<void> onLoad() async {
-    level = await TiledComponent.load("summer_level_01.tmx", Vector2.all(16));
+    level = await TiledComponent.load("$levelName.tmx", Vector2.all(16));
     add(level);
     _addSpawnPoint();
     _addCollision();
@@ -54,7 +54,10 @@ class Level extends World{
           final portal = Portal(
             position: spawnPoint.position,
             size: spawnPoint.size,
-            name: spawnPoint.name,
+            // name: spawnPoint.name,
+            isStartingPortal: spawnPoint.properties.getValue(
+              "isStartingPortal",
+            ),
           );
           add(portal);
           break;
