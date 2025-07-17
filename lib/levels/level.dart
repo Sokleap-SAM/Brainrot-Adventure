@@ -8,7 +8,7 @@ import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 
-class Level extends World {
+class Level extends World{
   String levelName;
   final Player player;
   Level({required this.levelName, required this.player});

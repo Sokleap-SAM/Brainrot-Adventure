@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:ui';
 
+import 'package:brainrot_adventure/levels/Button.dart';
 import 'package:brainrot_adventure/levels/level.dart';
 import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/widgets.dart';
 
 class BrainrotAdventure extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
@@ -23,6 +25,7 @@ class BrainrotAdventure extends FlameGame
 
     _loadLevel();
     add(FpsTextComponent(position: Vector2(10, 10)));
+    add(Button()); // Add the pause button to the game
     return super.onLoad();
   }
 

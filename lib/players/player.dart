@@ -39,8 +39,8 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isJumping = false;
   final double gravity = 9.8;
-  final double jumpForce = -400.0;
-  final double terminalVelocity = 300;
+  final double jumpForce = -800.0;
+  final double terminalVelocity = 500;
 
   bool isOnGround = false;
   bool isCrouch = false;
@@ -298,3 +298,8 @@ class Player extends SpriteAnimationGroupComponent
     });
   }
 }
+
+
+
+
+
