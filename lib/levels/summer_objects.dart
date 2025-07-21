@@ -23,7 +23,7 @@ class SummerObjects extends SpriteAnimationComponent
   @override
   FutureOr<void> onLoad() {
     add(objectHitBox);
-    debugMode = true;
+    // debugMode = true;
     priority = -1;
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Items/SummerObjects/$summerobject.png'),

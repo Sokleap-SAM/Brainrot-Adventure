@@ -6,12 +6,16 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 
 class Button extends SpriteComponent
-    with HasGameReference<BrainrotAdventure>, TapCallbacks {
+    with HasGameReference<BrainrotAdventure>, TapCallbacks { 
   final AudioManager audioManager;
-  Button(this.audioManager);
+
+  Button({
+    super.position,
+    required this.audioManager,
+  });
 
   final double margin = 32;
-  final double buttonSize = 64;
+  final double buttonSize = 64; 
 
   @override
   FutureOr<void> onLoad() async {

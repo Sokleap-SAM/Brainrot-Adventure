@@ -43,8 +43,8 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isJumping = false;
   final double gravity = 9.8;
-  final double jumpForce = -800.0;
-  final double terminalVelocity = 500;
+  final double jumpForce = -500.0;
+  final double terminalVelocity = 300;
 
   bool isOnGround = false;
   bool isCrouch = false;
@@ -66,7 +66,7 @@ class Player extends SpriteAnimationGroupComponent
     audioManager.startBgm('Pixel Daydream.mp3', 0.4);
     _loadAllAnimation();
     add(playerHitBox);
-    debugMode = true;
+    // debugMode = true;
 
     return super.onLoad();
   }

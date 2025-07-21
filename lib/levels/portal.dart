@@ -31,7 +31,7 @@ class Portal extends SpriteAnimationComponent
   @override
   FutureOr<void> onLoad() {
     add(portalHitBox);
-    debugMode = true;
+    // debugMode = true;
     priority = -1;
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Items/SummerObjects/portal.png'),

@@ -1,9 +1,9 @@
+import 'dart:io';
 import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:brainrot_adventure/brainrot_adventure.dart'; // Import your game class
+import 'package:brainrot_adventure/brainrot_adventure.dart';
 
-class MenuOverlay extends StatelessWidget {
-  // A reference to the game instance is often useful for controlling game state
+class MenuOverlay extends StatelessWidget { 
   final BrainrotAdventure game;
   final AudioManager audioManager;
 
@@ -14,11 +14,10 @@ class MenuOverlay extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return Material(
-      // Use Material to get access to Theme data, shadows, etc.
-      color: Colors.black54, // Semi-transparent black background
-      child: Center(
+      color: Colors.black54,
+      child: Center( 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,8 +33,8 @@ class MenuOverlay extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 game.overlays.remove('MenuOverlay');
-                audioManager.resumeBgm(); // Remove the overlay
-                game.resumeEngine(); // Resume the game
+                audioManager.resumeBgm();
+                game.resumeEngine();
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -57,15 +56,12 @@ class MenuOverlay extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Handle restart game logic
-                // For example, you might want to reset your game state or load a new level
                 game.overlays.remove('MenuOverlay');
                 game.resumeEngine();
-                // Or if you want to completely restart the game, you might do something like:
-                // game.resetGame(); // A method you'd need to implement in BrainrotAdventure
-                print('Restart Game');
+                print('Resume');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
@@ -82,15 +78,14 @@ class MenuOverlay extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Restart',
+                'Settings',
                 style: TextStyle(fontSize: 24.0, color: Colors.white),
               ),
             ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Handle options/settings logic
-                print('Options');
+                exit(0); // This will close the app
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
@@ -107,7 +102,7 @@ class MenuOverlay extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Options',
+                'Exit',
                 style: TextStyle(fontSize: 24.0, color: Colors.white),
               ),
             ),

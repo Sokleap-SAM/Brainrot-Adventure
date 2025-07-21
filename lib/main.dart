@@ -1,5 +1,4 @@
 import 'package:brainrot_adventure/brainrot_adventure.dart';
-import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:brainrot_adventure/levels/menu_overlay.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';

@@ -14,7 +14,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 class BrainrotAdventure extends FlameGame
-    with HasKeyboardHandlerComponents, HasCollisionDetection, TapCallbacks {
+    with HasKeyboardHandlerComponents, HasCollisionDetection {
   @override
   Color backgroundColor() => const Color(0x00000000);
 
@@ -47,7 +47,7 @@ class BrainrotAdventure extends FlameGame
     await audioManager.init(audioList);
     // audioManager.startBgm('Pixel Daydream.mp3', 0.5);
     add(stableBackground);
-    add(Button(audioManager));
+    add(Button(audioManager: audioManager));
 
     _loadLevel();
     add(FpsTextComponent(position: Vector2(10, 10)));

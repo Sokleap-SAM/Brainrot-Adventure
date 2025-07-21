@@ -26,7 +26,7 @@ class Enemy extends SpriteAnimationGroupComponent
 
   @override
   FutureOr<void> onLoad() {
-    debugMode = true;
+    // debugMode = true;
     leftRange = position.x - leftRange + width / 2;
     rightRange = position.x + rightRange + width / 2;
     add(enemyHitBox);
