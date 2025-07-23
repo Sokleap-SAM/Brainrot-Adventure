@@ -1,7 +1,7 @@
-import 'package:brainrot_adventure/brainrot_adventure.dart';
-import 'package:brainrot_adventure/levels/menu_overlay.dart';
+import 'package:brainrot_adventure/game_screen.dart';
+import 'package:brainrot_adventure/main_menu_screen.dart';
+import 'package:brainrot_adventure/setting_screen.dart';
 import 'package:flame/flame.dart';
-import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -17,26 +17,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final game = BrainrotAdventure(); // Instantiate your game
-
     return MaterialApp(
       title: 'Brainrot Adventure',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: GameWidget<BrainrotAdventure>(
-        game: game,
-        // Define your overlays here
-        overlayBuilderMap: {
-          'MenuOverlay': (BuildContext context, BrainrotAdventure game) {
-            return MenuOverlay(
-              game: game,
-              audioManager: game.audioManager,
-            ); // Pass the game instance to your overlay
-          },
-          // Add other overlays here if you have them (e.g., 'GameOverOverlay')
-        },
-        // Optionally, define what overlay to show when the game starts
-        // initialActiveOverlays: const ['MenuOverlay'], // If you want the menu to show on startup
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MainMenuScreen(),
+        '/game': (context) => const GameScreen(),
+        '/settings': (context) => const SettingsScreen(),
+      },
     );
   }
 }
