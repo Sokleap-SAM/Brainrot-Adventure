@@ -6,31 +6,26 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 
 class Button extends SpriteComponent
-    with HasGameReference<BrainrotAdventure>, TapCallbacks { 
-  final AudioManager audioManager;
-
-  Button({
-    super.position,
-    required this.audioManager,
-  });
+    with HasGameReference<BrainrotAdventure>, TapCallbacks {
+  Button({super.position});
 
   final double margin = 32;
-  final double buttonSize = 64; 
+  final double buttonSize = 64;
 
   @override
   FutureOr<void> onLoad() async {
     sprite = Sprite(
       game.images.fromCache('Button/PauseButton/PauseButton.png'),
     );
-    position = Vector2(60, 30);
-    priority = 10;
+    position = Vector2(30, 30);
+    priority = 100;
     return super.onLoad();
   }
 
   @override
   void onTapUp(TapUpEvent event) {
     game.overlays.add('MenuOverlay');
-    audioManager.pauseBgm();
+    AudioManager.instance.pauseBgm();
     game.pauseEngine();
     super.onTapUp(event);
   }
