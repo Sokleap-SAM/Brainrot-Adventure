@@ -1,23 +1,17 @@
-import 'dart:io';
 import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart';
 
-class MenuOverlay extends StatelessWidget { 
+class MenuOverlay extends StatelessWidget {
   final BrainrotAdventure game;
-  final AudioManager audioManager;
 
-  const MenuOverlay({
-    super.key,
-    required this.game,
-    required this.audioManager,
-  });
+  const MenuOverlay({super.key, required this.game});
 
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return Material(
       color: Colors.black54,
-      child: Center( 
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -33,7 +27,7 @@ class MenuOverlay extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 game.overlays.remove('MenuOverlay');
-                audioManager.resumeBgm();
+                AudioManager.instance.resumeBgm();
                 game.resumeEngine();
               },
               style: ElevatedButton.styleFrom(
@@ -56,19 +50,15 @@ class MenuOverlay extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 game.overlays.remove('MenuOverlay');
                 game.resumeEngine();
-                print('Resume');
+                Navigator.of(context).pushNamed('/settings');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
-                minimumSize: const Size(
-                  220,
-                  60,
-                ), // <-- Set fixed size for all buttons
+                minimumSize: const Size(220, 60),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 40,
                   vertical: 20,
@@ -85,14 +75,15 @@ class MenuOverlay extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                exit(0); // This will close the app
+                game.overlays.remove('MenuOverlay');
+                AudioManager.instance.stopBgm();
+                game.resumeEngine();
+
+                Navigator.of(context).popUntil((route) => route.isFirst);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,
-                minimumSize: const Size(
-                  220,
-                  60,
-                ), // <-- Set fixed size for all buttons
+                minimumSize: const Size(220, 60),
                 padding: const EdgeInsets.symmetric(
                   horizontal: 40,
                   vertical: 20,

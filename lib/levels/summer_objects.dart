@@ -36,10 +36,10 @@ class SummerObjects extends SpriteAnimationComponent
     return super.onLoad();
   }
 
-  void objectCollideWithPlayer(AudioManager audioManager) async {
+  void objectCollideWithPlayer() async {
     if (!isCollected) {
       isCollected = true;
-      audioManager.playSfx('collectObject.wav', 1);
+      AudioManager.instance.playSfx('collectObject.wav', 1);
       removeFromParent();
     }
   }
