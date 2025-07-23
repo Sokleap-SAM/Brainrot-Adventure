@@ -21,11 +21,7 @@ class Player extends SpriteAnimationGroupComponent
         KeyboardHandler,
         CollisionCallbacks {
   String character;
-  Player({
-    super.position,
-    this.character = "Wizard_Ducky",
-    required this.audioManager,
-  });
+  Player({super.position, this.character = "Wizard_Ducky"});
 
   late final SpriteAnimation idleAnimation,
       runningAnimation,
@@ -59,11 +55,9 @@ class Player extends SpriteAnimationGroupComponent
     anchor: Anchor.topLeft,
   );
 
-  final AudioManager audioManager;
-
   @override
   FutureOr<void> onLoad() {
-    audioManager.startBgm('Pixel Daydream.mp3', 0.4);
+    AudioManager.instance.startBgm('Pixel Daydream.mp3', 0.4);
     _loadAllAnimation();
     add(playerHitBox);
     // debugMode = true;
@@ -133,7 +127,7 @@ class Player extends SpriteAnimationGroupComponent
         keysPressed.contains(LogicalKeyboardKey.arrowUp);
 
     if (isJumpKeyPressed && !isJumping && isOnGround && !isCrouch) {
-      audioManager.playSfx('jump.wav', 0.4);
+      AudioManager.instance.playSfx('jump.wav', 0.4);
       isJumping = true;
       isOnGround = false;
       velocity.y = jumpForce;
@@ -279,7 +273,7 @@ class Player extends SpriteAnimationGroupComponent
   ) {
     if (!reachPortal) {
       if (other is SummerObjects) {
-        other.objectCollideWithPlayer(audioManager);
+        other.objectCollideWithPlayer();
       }
       if (other is Enemy) {
         _respawn();
@@ -303,7 +297,8 @@ class Player extends SpriteAnimationGroupComponent
 
   void _respawn() {
     gotHit = true;
-    audioManager.playSfx('hit.wav', 1);
+    AudioManager.instance.playSfx('hit.wav', 1);
+    game.deductLive();
     velocity = Vector2.all(0);
     position = startingPosition;
     current = PlayerState.idle;

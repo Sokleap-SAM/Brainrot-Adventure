@@ -4,7 +4,9 @@ import 'dart:ui';
 import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:brainrot_adventure/levels/background.dart';
 import 'package:brainrot_adventure/levels/button.dart';
+import 'package:brainrot_adventure/levels/collectible_object.dart';
 import 'package:brainrot_adventure/levels/level.dart';
+import 'package:brainrot_adventure/levels/live.dart';
 import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
@@ -19,7 +21,6 @@ class BrainrotAdventure extends FlameGame
   Color backgroundColor() => const Color(0x00000000);
 
   // static const String pauseMenuIdentifier = 'PauseMenu';
-
   late CameraComponent cam;
   List<String> levelNames = ['summer_level_01', 'summer_level_01_part2'];
   int currentLevelIndex = 0;
@@ -32,22 +33,76 @@ class BrainrotAdventure extends FlameGame
     'hit.wav',
     'collectObject.wav',
   ];
-  AudioManager audioManager = AudioManager();
+
+  List<Live> lives = [];
+  int hp = 5;
+
+  Map<String, int> collectibleObjects = {"BeachBall": 1};
+
+  void initialHeart() {
+    final double hpSize = 64;
+    final double margin = 20;
+    double xPosition = 600 - margin - hpSize;
+    final double spacing = hpSize;
+
+    for (int i = 0; i < hp; i++) {
+      lives.add(Live(position: Vector2(xPosition, 20)));
+      cam.viewport.add(lives[i]);
+      xPosition -= spacing;
+    }
+  }
+
+  void deductLive() {
+    hp--;
+    final lastLive = lives.removeAt(0);
+    lastLive.removeFromParent();
+  }
+
+  void showCollectibleObjects() {
+    final double objectSize = 64;
+    final double margin = 20;
+    double xPosition = 1280 - margin - objectSize;
+    final double spacing = objectSize;
+    for (var entry in collectibleObjects.entries) {
+      cam.viewport.add(
+        CollectibleObject(
+          position: Vector2(xPosition, 20),
+          filePath: entry.key,
+        ),
+      );
+      final textComponent = TextComponent(
+        text: "0/${entry.value}",
+        position: Vector2(xPosition, 100),
+        textRenderer: TextPaint(
+          style: const TextStyle(
+            fontSize: 20.0,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            shadows: [
+              Shadow(
+                blurRadius: 3.0,
+                color: Colors.black,
+                offset: Offset(1.0, 1.0),
+              ),
+            ],
+          ),
+        ),
+      );
+      cam.viewport.add(textComponent);
+      xPosition -= spacing;
+    }
+  }
 
   @override
   Future<void> onLoad() async {
     await images.loadAllImages();
 
     final stableBackground = StaticBackground(
-      imagePath:
-          'Background/summer.png', // Or 'summer.png' depending on your file and pubspec
-      // You can explicitly set size if needed, e.g., size: Vector2(1280, 720),
-      // If not set, it will default to gameRef.size in onLoad
+      imagePath: 'Background/summer.png',
+      size: Vector2(1280, 720),
     );
-    await audioManager.init(audioList);
-    // audioManager.startBgm('Pixel Daydream.mp3', 0.5);
     add(stableBackground);
-    add(Button(audioManager: audioManager));
+    await AudioManager.instance.init(audioList);
 
     _loadLevel();
     add(FpsTextComponent(position: Vector2(10, 10)));
@@ -56,27 +111,23 @@ class BrainrotAdventure extends FlameGame
 
   // @override
   // KeyEventResult onKeyEvent(
-  //   KeyEvent event, // <--- Using KeyEvent as the parameter type
+  //   KeyEvent event,
   //   Set<LogicalKeyboardKey> keysPressed,
   // ) {
-  //   // Toggle pause menu on 'P' key press
-  //   // if (event is KeyEvent && keysPressed.contains(LogicalKeyboardKey.keyP)) { // This 'event is KeyEvent' check is redundant since the parameter is already KeyEvent
+  // if (event is KeyEvent && keysPressed.contains(LogicalKeyboardKey.keyP)) {
   //   if (keysPressed.contains(LogicalKeyboardKey.keyP)) {
   //     // Corrected and simplified check
   //     if (overlays.isActive(pauseMenuIdentifier)) {
   //       overlays.remove(pauseMenuIdentifier);
   //       resumeEngine();
-  //       audioManager.resumeBgm(); // Resume the game when pause menu is closed
+  //       audioManager.resumeBgm();
   //     } else {
   //       overlays.add(pauseMenuIdentifier);
   //       pauseEngine();
-  //       audioManager.pauseBgm(); // Pause the game when pause menu is shown
+  //       audioManager.pauseBgm();
   //     }
   //     return KeyEventResult.handled;
   //   }
-
-  //   // Removed the 'S' key for secondary menu
-
   //   return super.onKeyEvent(event, keysPressed);
   // }
 
@@ -90,14 +141,15 @@ class BrainrotAdventure extends FlameGame
         currentLevelIndex++;
         _loadLevel();
       } else {
-        audioManager.stopBgm();
+        AudioManager.instance.stopBgm();
       }
     }
   }
 
   void _loadLevel() {
-    Future.delayed(const Duration(seconds: 1), () {
-      player = Player(character: 'Wizard_Ducky', audioManager: audioManager);
+    Future.delayed(const Duration(milliseconds: 100), () {
+      player = Player(character: 'Wizard_Ducky');
+
       Level world = Level(
         player: player,
         levelName: levelNames[currentLevelIndex],
@@ -111,6 +163,9 @@ class BrainrotAdventure extends FlameGame
       cam.viewfinder.anchor = Anchor.topLeft;
 
       addAll([cam, world]);
+      cam.viewport.add(Button());
+      initialHeart();
+      showCollectibleObjects();
     });
   }
 }
