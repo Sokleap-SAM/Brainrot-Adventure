@@ -22,8 +22,8 @@ class Portal extends SpriteAnimationComponent
 
   final double stepTime = 0.40;
   RectangleHitbox portalHitBox = RectangleHitbox(
-    position: Vector2(13, 15),
-    size: Vector2(38, 49),
+    position: Vector2(16, 20),
+    size: Vector2(32, 44),
     anchor: Anchor.topLeft,
     collisionType: CollisionType.passive,
   );
