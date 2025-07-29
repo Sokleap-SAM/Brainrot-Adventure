@@ -185,7 +185,7 @@ class Player extends SpriteAnimationGroupComponent
     } else {
       velocity.x = 0;
     }
-    _updateFacingDirection();
+    updateFacingDirection();
     position.x += velocity.x * dt;
   }
 
@@ -200,7 +200,7 @@ class Player extends SpriteAnimationGroupComponent
     }
   }
 
-  void _updateFacingDirection() {
+  void updateFacingDirection() {
     if (playerDirection == PlayerDirection.left && !isFacingLeft) {
       flipHorizontallyAroundCenter();
       isFacingLeft = true;

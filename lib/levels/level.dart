@@ -9,12 +9,22 @@ import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 
-class Level extends World{
+class Level extends World {
   String levelName;
   final Player player;
-  Level({required this.levelName, required this.player});
+  bool isStartingPortal;
+  late Vector2 portalPosition;
+
+  Level({
+    required this.levelName,
+    required this.player,
+    required this.isCollectObjectList,
+    required this.isStartingPortal,
+  });
+
   late TiledComponent level;
   List<CollisionBlock> collisionBlocks = [];
+  Map<String, bool> isCollectObjectList;
 
   @override
   Future<void> onLoad() async {
@@ -31,26 +41,6 @@ class Level extends World{
 
     for (final spawnPoint in spawnPointLayer.objects) {
       switch (spawnPoint.class_) {
-        case 'Player':
-          player.setSpawnPoint(Vector2(spawnPoint.x, spawnPoint.y));
-          add(player);
-          break;
-        case 'Object':
-          final summerObject = SummerObjects(
-            summerobject: spawnPoint.name,
-            size: Vector2(spawnPoint.width, spawnPoint.height),
-            position: Vector2(spawnPoint.x, spawnPoint.y),
-          );
-          add(summerObject);
-          break;
-        case 'Enemy':
-          final enemy = Enemy(
-            position: spawnPoint.position,
-            size: spawnPoint.size,
-            enemyName: spawnPoint.name,
-          );
-          add(enemy);
-          break;
         case 'Portal':
           final portal = Portal(
             position: spawnPoint.position,
@@ -60,6 +50,7 @@ class Level extends World{
               "isStartingPortal",
             ),
           );
+          portalPosition = spawnPoint.position;
           add(portal);
           break;
         case 'SummerTraps':
@@ -68,7 +59,45 @@ class Level extends World{
             size: Vector2(spawnPoint.width, spawnPoint.height),
             position: Vector2(spawnPoint.x, spawnPoint.y),
           );
-          add(summerTraps); 
+          add(summerTraps);
+          break;
+        default:
+      }
+    }
+
+    for (final spawnPoint in spawnPointLayer.objects) {
+      switch (spawnPoint.class_) {
+        case 'Player':
+          print(isStartingPortal);
+          if (!isStartingPortal) {
+            player.setSpawnPoint(Vector2(spawnPoint.x, spawnPoint.y));
+          } else {
+            player.setSpawnPoint(
+              Vector2(portalPosition.x - 44, portalPosition.y),
+            );
+            player.flipHorizontallyAroundCenter();
+            player.isFacingLeft = true;
+          }
+          add(player);
+          break;
+        case 'Object':
+          if (!isCollectObjectList[spawnPoint.name]!) {
+            final summerObject = SummerObjects(
+              summerobject: spawnPoint.name,
+              size: Vector2(spawnPoint.width, spawnPoint.height),
+              position: Vector2(spawnPoint.x, spawnPoint.y),
+              spriteAmount: spawnPoint.properties.getValue('SpriteAmount'),
+            );
+            add(summerObject);
+          }
+          break;
+        case 'Enemy':
+          final enemy = Enemy(
+            position: spawnPoint.position,
+            size: spawnPoint.size,
+            enemyName: spawnPoint.name,
+          );
+          add(enemy);
           break;
         default:
       }

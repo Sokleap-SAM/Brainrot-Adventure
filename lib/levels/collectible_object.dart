@@ -10,7 +10,7 @@ class CollectibleObject extends SpriteComponent
 
   @override
   FutureOr<void> onLoad() async {
-    sprite = Sprite(game.images.fromCache('Items/SummerObjects/$filePath.png'));
+    sprite = Sprite(game.images.fromCache('Collectible/Summer/$filePath.png'));
     priority = 100;
     return super.onLoad();
   }

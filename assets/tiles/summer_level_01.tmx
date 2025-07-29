@@ -52,7 +52,11 @@
  </layer>
  <objectgroup id="2" name="SpawnPoint">
   <object id="4" name="Player" type="Player" x="368.333" y="480.667" width="64" height="64"/>
-  <object id="85" name="BeachBall" type="Object" x="606.5" y="144.75" width="64" height="64"/>
+  <object id="85" name="BeachBall" type="Object" x="606.5" y="144.75" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+   </properties>
+  </object>
   <object id="93" name="Chubby Buck Tooth" type="Enemy" x="592.5" y="559.917" width="64" height="64"/>
   <object id="96" type="Portal" x="1168" y="368" width="64" height="64">
    <properties>

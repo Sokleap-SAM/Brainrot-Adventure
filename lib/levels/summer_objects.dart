@@ -9,8 +9,14 @@ class SummerObjects extends SpriteAnimationComponent
     with HasGameReference<BrainrotAdventure>, CollisionCallbacks {
   final String summerobject;
   bool isCollected = false;
+  int spriteAmount;
 
-  SummerObjects({super.position, super.size, this.summerobject = 'BeachBall'});
+  SummerObjects({
+    super.position,
+    super.size,
+    this.summerobject = 'BeachBall',
+    this.spriteAmount = 1,
+  });
 
   final double stepTime = 0.40;
   RectangleHitbox objectHitBox = RectangleHitbox(
@@ -28,7 +34,7 @@ class SummerObjects extends SpriteAnimationComponent
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Items/SummerObjects/$summerobject.png'),
       SpriteAnimationData.sequenced(
-        amount: 4,
+        amount: spriteAmount,
         stepTime: stepTime,
         textureSize: size,
       ),
@@ -40,6 +46,7 @@ class SummerObjects extends SpriteAnimationComponent
     if (!isCollected) {
       isCollected = true;
       AudioManager.instance.playSfx('collectObject.wav', 1);
+      game.updateCollectibleText(summerobject);
       removeFromParent();
     }
   }

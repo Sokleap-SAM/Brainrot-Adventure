@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:brainrot_adventure/levels/audio_manager.dart';
 import 'package:brainrot_adventure/levels/background.dart';
@@ -12,8 +11,6 @@ import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 
 class BrainrotAdventure extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
@@ -37,16 +34,22 @@ class BrainrotAdventure extends FlameGame
   List<Live> lives = [];
   int hp = 5;
 
-  Map<String, int> collectibleObjects = {"BeachBall": 1};
+  final Map<String, int> _collectibleObjects = {
+    "BeachBall": 1,
+    "SandCastle": 1,
+  };
+  final Map<String, TextComponent> _objectTexts = {};
+  final Map<String, int> _currentCollect = {"BeachBall": 0, "SandCastle": 0};
+  final Map<String, bool> _isCollectObjectList = {};
 
-  void initialHeart() {
+  void _initialHeart() {
     final double hpSize = 64;
     final double margin = 20;
     double xPosition = 600 - margin - hpSize;
     final double spacing = hpSize;
 
     for (int i = 0; i < hp; i++) {
-      lives.add(Live(position: Vector2(xPosition, 20)));
+      lives.add(Live(position: Vector2(xPosition, 30)));
       cam.viewport.add(lives[i]);
       xPosition -= spacing;
     }
@@ -58,38 +61,51 @@ class BrainrotAdventure extends FlameGame
     lastLive.removeFromParent();
   }
 
-  void showCollectibleObjects() {
+  void _showCollectibleObjects() {
     final double objectSize = 64;
     final double margin = 20;
     double xPosition = 1280 - margin - objectSize;
     final double spacing = objectSize;
-    for (var entry in collectibleObjects.entries) {
+    for (var entry in _collectibleObjects.entries) {
       cam.viewport.add(
         CollectibleObject(
-          position: Vector2(xPosition, 20),
+          position: Vector2(xPosition, 30),
           filePath: entry.key,
         ),
       );
       final textComponent = TextComponent(
-        text: "0/${entry.value}",
-        position: Vector2(xPosition, 100),
+        text: "${_currentCollect[entry.key]}/${entry.value}",
+        position: Vector2(xPosition + 15, 100),
         textRenderer: TextPaint(
           style: const TextStyle(
             fontSize: 20.0,
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            shadows: [
-              Shadow(
-                blurRadius: 3.0,
-                color: Colors.black,
-                offset: Offset(1.0, 1.0),
-              ),
-            ],
           ),
         ),
       );
+      _objectTexts[entry.key] = textComponent;
       cam.viewport.add(textComponent);
       xPosition -= spacing;
+    }
+  }
+
+  void updateCollectibleText(String objectName) {
+    int requirement = _collectibleObjects[objectName]!;
+    int currentCount = _currentCollect[objectName]! + 1;
+    TextComponent updateTextComponent = _objectTexts[objectName]!;
+    updateTextComponent.text = "$currentCount/$requirement";
+    _objectTexts[objectName] = updateTextComponent;
+    _currentCollect[objectName] = currentCount;
+  }
+
+  void _setCollectObjectList() {
+    for (var object in _collectibleObjects.entries) {
+      if (object.value == _currentCollect[object.key]) {
+        _isCollectObjectList[object.key] = true;
+      } else {
+        _isCollectObjectList[object.key] = false;
+      }
     }
   }
 
@@ -104,7 +120,7 @@ class BrainrotAdventure extends FlameGame
     add(stableBackground);
     await AudioManager.instance.init(audioList);
 
-    _loadLevel();
+    _loadLevel(false);
     add(FpsTextComponent(position: Vector2(10, 10)));
     return super.onLoad();
   }
@@ -135,24 +151,27 @@ class BrainrotAdventure extends FlameGame
     removeWhere((component) => component is Level);
     if (isStartingPortal) {
       currentLevelIndex--;
-      _loadLevel();
+      _loadLevel(isStartingPortal);
     } else {
       if (currentLevelIndex < levelNames.length - 1) {
         currentLevelIndex++;
-        _loadLevel();
+        _loadLevel(isStartingPortal);
       } else {
         AudioManager.instance.stopBgm();
       }
     }
   }
 
-  void _loadLevel() {
+  void _loadLevel(bool isStartingPortal) {
+    _setCollectObjectList();
     Future.delayed(const Duration(milliseconds: 100), () {
       player = Player(character: 'Wizard_Ducky');
 
       Level world = Level(
         player: player,
         levelName: levelNames[currentLevelIndex],
+        isCollectObjectList: _isCollectObjectList,
+        isStartingPortal: isStartingPortal,
       );
 
       cam = CameraComponent.withFixedResolution(
@@ -164,8 +183,8 @@ class BrainrotAdventure extends FlameGame
 
       addAll([cam, world]);
       cam.viewport.add(Button());
-      initialHeart();
-      showCollectibleObjects();
+      _initialHeart();
+      _showCollectibleObjects();
     });
   }
 }

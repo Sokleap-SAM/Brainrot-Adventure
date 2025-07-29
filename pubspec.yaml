@@ -71,6 +71,7 @@ flutter:
     - assets/audio/
     - assets/images/Background/
     - assets/images/Button/PauseButton/
+    - assets/images/Collectible/Summer/ 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

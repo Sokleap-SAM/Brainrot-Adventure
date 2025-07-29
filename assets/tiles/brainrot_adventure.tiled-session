@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "summer_level_01_part2.tmx",
+    "activeFile": "summer_level_01.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -18,26 +18,26 @@
         },
         "summer_level_01.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 1,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1043.5,
+                "x": 575.5,
                 "y": 344.5
             }
         },
         "summer_level_01_part2.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 190,
-                "y": 449.99999999999994
+                "x": 640.6666666666666,
+                "y": 360
             }
         }
     },
@@ -52,10 +52,10 @@
         "summer_level_01_part2.tmx"
     ],
     "project": "brainrot_adventure.tiled-project",
-    "property.type": "bool",
+    "property.type": "int",
     "recentFiles": [
-        "summer_level_01.tmx",
         "summer_level_01_part2.tmx",
+        "summer_level_01.tmx",
         "summer terrain.tsx",
         "summer terrain_v2.tsx"
     ],
