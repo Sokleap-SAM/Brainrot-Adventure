@@ -65,7 +65,8 @@ flutter:
     - assets/images/Player/Wizard_Ducky/
     - assets/images/Terrain/
     - assets/tiles/
-    - assets/images/Items/SummerObjects/ 
+    - assets/images/Items/SummerObjects/
+    - assets/images/Traps/SummerTraps/ 
     - assets/images/Enemy/Chubby Buck Tooth/
     - assets/audio/
     - assets/images/Background/

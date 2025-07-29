@@ -6,6 +6,7 @@ import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:brainrot_adventure/levels/collision_system.dart';
 import 'package:brainrot_adventure/levels/portal.dart';
 import 'package:brainrot_adventure/levels/summer_objects.dart';
+import 'package:brainrot_adventure/levels/summer_traps.dart';
 import 'package:brainrot_adventure/players/enemy.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
@@ -39,8 +40,8 @@ class Player extends SpriteAnimationGroupComponent
 
   bool isJumping = false;
   final double gravity = 9.8;
-  final double jumpForce = -500.0;
-  final double terminalVelocity = 300;
+  final double jumpForce = -800.0;
+  final double terminalVelocity = 500;
 
   bool isOnGround = false;
   bool isCrouch = false;
@@ -275,11 +276,15 @@ class Player extends SpriteAnimationGroupComponent
       if (other is SummerObjects) {
         other.objectCollideWithPlayer();
       }
-      if (other is Enemy) {
+      if (other is Enemy) { 
         _respawn();
       }
       if (other is Portal) {
         _reachPortal(other.getPortalType());
+      }
+      if(other is SummerTraps) {
+        // print('Player hit by trap');
+        _respawn();
       }
       super.onCollisionStart(intersectionPoints, other);
     }

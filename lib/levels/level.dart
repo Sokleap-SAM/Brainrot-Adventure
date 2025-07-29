@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:brainrot_adventure/levels/collision_block.dart';
 import 'package:brainrot_adventure/levels/portal.dart';
 import 'package:brainrot_adventure/levels/summer_objects.dart';
+import 'package:brainrot_adventure/levels/summer_traps.dart';
 import 'package:brainrot_adventure/players/enemy.dart';
 import 'package:brainrot_adventure/players/player.dart';
 import 'package:flame/components.dart';
@@ -60,6 +61,14 @@ class Level extends World{
             ),
           );
           add(portal);
+          break;
+        case 'SummerTraps':
+          final summerTraps = SummerTraps(
+            summertraps: spawnPoint.name,
+            size: Vector2(spawnPoint.width, spawnPoint.height),
+            position: Vector2(spawnPoint.x, spawnPoint.y),
+          );
+          add(summerTraps); 
           break;
         default:
       }
