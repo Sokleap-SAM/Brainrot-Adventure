@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:brainrot_adventure/levels/audio_manager.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
+
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  // 2. Declare state variables for current volume levels
+  late double _currentMusicVolume;
+  late double _currentSfxVolume;
+
+  @override
+  void initState() {
+    super.initState();
+    // 3. Initialize state variables with current AudioManager values
+    _currentMusicVolume = AudioManager.instance.musicVolume;
+    _currentSfxVolume = AudioManager.instance.sfxVolume;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +40,7 @@ class SettingsScreen extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/Background/game.png'),
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
         child: Center(
@@ -49,7 +66,7 @@ class SettingsScreen extends StatelessWidget {
                     Row(
                       children: [
                         SizedBox(
-                          width: 100, // Explicitly sets the width
+                          width: 100,
                           child: Text(
                             'Music:',
                             style: const TextStyle(
@@ -60,13 +77,20 @@ class SettingsScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: Slider(
-                            value: 0.7,
+                            value: _currentMusicVolume,
                             min: 0.0,
                             max: 1.0,
-                            divisions: 10,
-                            label: 'Volume: ',
+                            divisions: 50,
+                            label: _currentMusicVolume.toStringAsFixed(2),
                             onChanged: (double value) {
-                              print('Music Volume changed: $value');
+                              setState(() {
+                                _currentMusicVolume = value;
+                                AudioManager.instance.setMusicVolume(value);
+                                AudioManager.instance.startBgm(
+                                  "Pixel Daydream.mp3",
+                                  AudioManager.instance.musicVolume,
+                                );
+                              });
                             },
                             activeColor: Colors.blue,
                             inactiveColor: Colors.grey,
@@ -78,7 +102,7 @@ class SettingsScreen extends StatelessWidget {
                     Row(
                       children: [
                         SizedBox(
-                          width: 100, // Explicitly sets the width
+                          width: 100,
                           child: Text(
                             'SFX:',
                             style: const TextStyle(
@@ -89,13 +113,16 @@ class SettingsScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: Slider(
-                            value: 0.7,
+                            value: _currentSfxVolume,
                             min: 0.0,
                             max: 1.0,
-                            divisions: 10,
-                            label: 'Volume:',
+                            divisions: 50,
+                            label: _currentSfxVolume.toStringAsFixed(2),
                             onChanged: (double value) {
-                              print('SFX Volume changed: $value');
+                              setState(() {
+                                _currentSfxVolume = value;
+                                AudioManager.instance.setSFXVolume(value);
+                              });
                             },
                             activeColor: Colors.blue,
                             inactiveColor: Colors.grey,
