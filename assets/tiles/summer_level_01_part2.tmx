@@ -67,9 +67,10 @@
    </properties>
   </object>
   <object id="9" name="Player" type="Player" x="250" y="480" width="64" height="64"/>
-  <object id="10" name="SandCastle" type="Object" x="480" y="448" width="64" height="64">
+  <object id="10" name="SandCastle" type="Chest" x="480" y="480" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="3"/>
+    <property name="isEmpty" type="bool" value="false"/>
    </properties>
   </object>
  </objectgroup>
