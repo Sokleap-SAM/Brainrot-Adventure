@@ -18,7 +18,6 @@ class Enemy extends SpriteAnimationGroupComponent
   bool isVerticalMovement;
   late double setVelocity;
   double velocity;
-  double movement = -100;
   int spriteAmount;
   RectangleHitbox enemyHitBox = RectangleHitbox(
     position: Vector2(8, 34),
@@ -39,8 +38,15 @@ class Enemy extends SpriteAnimationGroupComponent
 
   @override
   FutureOr<void> onLoad() {
-    // debugMode = true;
+    if (enemyName == "Two Skulled Bird") {
+      enemyHitBox = RectangleHitbox(
+        position: Vector2(8, 9),
+        size: Vector2(50, 28),
+      );
+    }
+    debugMode = true;
     setTileRange();
+    setVelocity = -velocity;
     add(enemyHitBox);
     _loadAnimation();
     return super.onLoad();
@@ -63,7 +69,7 @@ class Enemy extends SpriteAnimationGroupComponent
   }
 
   void _loadAnimation() {
-    _horizontalMovementAnimation = _spriteAnimation('HorizonstalMovement.png');
+    _horizontalMovementAnimation = _spriteAnimation('HorizontalMovement');
     // hitAnimation = _spriteAnimation('hit', 4)..loop = false;
 
     animations = {

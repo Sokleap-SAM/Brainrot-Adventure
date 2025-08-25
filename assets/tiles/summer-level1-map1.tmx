@@ -125,7 +125,7 @@
     <property name="velocity" type="float" value="120"/>
    </properties>
   </object>
-  <object id="48" name="Sand Flag" type="FinishFlag" x="2400" y="1136" width="64" height="64">
+  <object id="48" name="SandFlag" type="FinishFlag" x="2400" y="1136" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>

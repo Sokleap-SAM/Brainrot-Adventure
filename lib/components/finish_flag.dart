@@ -30,7 +30,7 @@ class FinishFlag extends SpriteAnimationComponent
     // debugMode = true;
     priority = -1;
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Items/SummerObjects/$name.png'),
+      game.images.fromCache('Flag/$name.png'),
       SpriteAnimationData.sequenced(
         amount: spriteAmount,
         stepTime: stepTime,

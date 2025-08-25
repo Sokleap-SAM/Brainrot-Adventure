@@ -25,7 +25,6 @@ class GameDataManager {
 
       if (!_settingsBox.containsKey(_settingsKey)) {
         await _settingsBox.put(_settingsKey, SettingsData());
-        print("no have");
       }
     }
   }

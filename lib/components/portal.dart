@@ -12,7 +12,7 @@ class Portal extends SpriteAnimationComponent
   Portal({
     super.position,
     super.size,
-    this.name = "BeachBall",
+    required this.name,
     this.isStartingPortal = false,
   });
 
@@ -34,7 +34,7 @@ class Portal extends SpriteAnimationComponent
     // debugMode = true;
     priority = -1;
     animation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Items/SummerObjects/portal.png'),
+      game.images.fromCache('Portal/$name.png'),
       SpriteAnimationData.sequenced(
         amount: 1,
         stepTime: stepTime,

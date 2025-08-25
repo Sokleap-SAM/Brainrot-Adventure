@@ -137,7 +137,7 @@ class BrainrotAdventure extends FlameGame
     updateTextComponent.textRenderer = TextPaint(
       style: const TextStyle(
         fontSize: 20.0,
-        color: Colors.green,
+        color: Color.fromRGBO(6, 64, 43, 1),
         fontWeight: FontWeight.bold,
       ),
     );
@@ -276,7 +276,7 @@ class BrainrotAdventure extends FlameGame
       textRenderer: TextPaint(
         style: const TextStyle(
           fontSize: 20.0,
-          color: Colors.lightBlue,
+          color: Color.fromRGBO(200, 200, 200, 1),
           fontWeight: FontWeight.bold,
         ),
       ),

@@ -4,7 +4,7 @@
     "objectsToCollect": {
       "BeachBall": 1
     },
-    "timeLimitInSeconds": 100,
+    "timeLimitInSeconds": 80,
     "maps": ["summer-level1-map1"]
   },
   {
@@ -14,5 +14,13 @@
     },
     "timeLimitInSeconds": 100,
     "maps": ["summer-level2-map1"]
+  },
+  {
+    "levelNumber": 3,
+    "objectsToCollect": {
+      "SandCastle": 1
+    },
+    "timeLimitInSeconds": 150,
+    "maps": ["summer-level3-map1"]
   }
 ]

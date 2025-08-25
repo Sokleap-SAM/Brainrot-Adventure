@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="75">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="79">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Tile Layer 1" width="160" height="90">
   <data encoding="csv">
@@ -174,7 +174,7 @@
     <property name="velocity" type="float" value="120"/>
    </properties>
   </object>
-  <object id="35" name="Sand Flag" type="FinishFlag" x="1344" y="1328" width="64" height="64">
+  <object id="35" name="SandFlag" type="FinishFlag" x="1344" y="1328" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>
@@ -187,6 +187,36 @@
     <property name="negativeTile" type="float" value="18"/>
     <property name="positiveTile" type="float" value="18"/>
     <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="75" name="Saws" type="SummerTraps" x="896" y="1248" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="5"/>
+    <property name="rightTile" type="float" value="5"/>
+    <property name="velocity" type="float" value="50"/>
+   </properties>
+  </object>
+  <object id="76" name="Saws" type="SummerTraps" x="1120" y="1112" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="7"/>
+    <property name="rightTile" type="float" value="6"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="77" name="Saws" type="SummerTraps" x="1184" y="1112" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="7"/>
+    <property name="rightTile" type="float" value="6"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="78" name="SandCastle" type="Chest" x="1184" y="1327" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
    </properties>
   </object>
  </objectgroup>

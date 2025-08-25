@@ -47,7 +47,7 @@ class Level extends World {
           final portal = Portal(
             position: spawnPoint.position,
             size: spawnPoint.size,
-            // name: spawnPoint.name,
+            name: spawnPoint.name,
             isStartingPortal: spawnPoint.properties.getValue(
               "isStartingPortal",
             ),
@@ -112,6 +112,7 @@ class Level extends World {
           add(enemy);
           break;
         case 'FinishFlag':
+          print('${spawnPoint.name}');
           final finishFlag = FinishFlag(
             position: spawnPoint.position,
             name: spawnPoint.name,

@@ -36,7 +36,7 @@ class SummerTraps extends SpriteAnimationGroupComponent
   FutureOr<void> onLoad() {
     // debugMode = true;
     setTileRange();
-    setVelocity = velocity;
+    setVelocity = -velocity;
     add(trapHitBox);
     priority = -1;
     _loadAnimation();

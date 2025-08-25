@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "summer-level2-map1.tmx",
+    "activeFile": "summer-level-01-map5.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -23,7 +23,7 @@
                 2
             ],
             "scale": 0.75,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
                 "x": 1283.3333333333333,
                 "y": 1230.6666666666665
@@ -34,23 +34,33 @@
                 3,
                 2
             ],
-            "scale": 0.75,
+            "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1280.6666666666665,
+                "x": 1281,
                 "y": 720
+            }
+        },
+        "summer-level-01-map5.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 0.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 954,
+                "y": 693
             }
         },
         "summer-level1-map1.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                3
             ],
-            "scale": 0.75,
-            "selectedLayer": 2,
+            "scale": 0.25,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 1284,
-                "y": 603.3333333333333
+                "x": 1282,
+                "y": 720
             }
         },
         "summer-level1-map2.tmx": {
@@ -65,74 +75,29 @@
             }
         },
         "summer-level2-map1.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 1,
-            "viewCenter": {
-                "x": 1329,
-                "y": 361
-            }
-        },
-        "summer-level-01-map4.tmx": {
             "expandedObjectLayers": [
+                3,
                 2
             ],
             "scale": 0.5,
-            "selectedLayer": 0,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1277,
-                "y": 663
+                "x": 972,
+                "y": 627
             }
         },
-        "summer-level-01-map5.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
-            "scale": 0.5,
+        "summer-level3-map1.tmx": {
+            "scale": 0.42638671875,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1379,
-                "y": 477
-            }
-        },
-        "summer-level-01-map6.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 1417,
-                "y": 451
-            }
-        },
-        "summer-level-01-map7.tmx": {
-            "expandedObjectLayers": [
-                2
-            ],
-            "scale": 0.5,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 1511,
-                "y": 863
-            }
-        },
-        "summer-level-01-map8.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 1281,
-                "y": 721
-            }
-        },
-        "summer-level-01-map9.tmx": {
-            "scale": 0.5,
-            "selectedLayer": 0,
-            "viewCenter": {
-                "x": 1151.5151515151515,
-                "y": 1295.4545454545455
+                "x": 1280.5276899821356,
+                "y": 718.8310201090193
             }
         },
         "summer_level_01.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 0.75,
             "selectedLayer": 1,
@@ -143,8 +108,8 @@
         },
         "summer_level_01_part2.tmx": {
             "expandedObjectLayers": [
-                3,
-                2
+                2,
+                3
             ],
             "scale": 1,
             "selectedLayer": 2,
@@ -164,7 +129,8 @@
         "summer-level-01-map1.tmx",
         "summer-level-01-map2.tmx",
         "summer-level1-map1.tmx",
-        "summer-level2-map1.tmx"
+        "summer-level2-map1.tmx",
+        "summer-level-01-map5.tmx"
     ],
     "project": "brainrot_adventure.tiled-project",
     "property.type": "int",
@@ -173,6 +139,7 @@
         "summer-level-01-map2.tmx",
         "summer-level1-map1.tmx",
         "summer-level2-map1.tmx",
+        "summer-level-01-map5.tmx",
         "summer-level1-map2.tmx",
         "summer_level_01.tmx",
         "summer_level_01_part2.tmx",
