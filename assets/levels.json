@@ -1,0 +1,18 @@
+[
+  {
+    "levelNumber": 1,
+    "objectsToCollect": {
+      "BeachBall": 1
+    },
+    "timeLimitInSeconds": 100,
+    "maps": ["summer-level1-map1"]
+  },
+  {
+    "levelNumber": 2,
+    "objectsToCollect": {
+      "SandCastle": 1
+    },
+    "timeLimitInSeconds": 100,
+    "maps": ["summer-level2-map1"]
+  }
+]
