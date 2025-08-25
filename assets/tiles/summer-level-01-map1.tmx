@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="98">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="99">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Background" width="160" height="90">
   <data encoding="csv">
@@ -170,7 +170,6 @@
   <object id="86" x="1344" y="176" width="96" height="16"/>
   <object id="87" x="2400" y="832" width="112" height="32"/>
   <object id="88" x="2464" y="640" width="48" height="32"/>
-  <object id="95" x="2720" y="64"/>
  </objectgroup>
  <objectgroup id="3" name="SpawnPoint">
   <object id="4" name="Chubby Buck Tooth" type="Enemy" x="624" y="1264" width="64" height="64"/>
