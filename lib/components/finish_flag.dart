@@ -12,7 +12,7 @@ class FinishFlag extends SpriteAnimationComponent
   FinishFlag({
     super.position,
     super.size,
-    this.name = 'sand_flag',
+    required this.name,
     this.spriteAmount = 1,
   });
 

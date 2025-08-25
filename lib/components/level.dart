@@ -107,12 +107,14 @@ class Level extends World {
               'isVerticalMovement',
             ),
             velocity: spawnPoint.properties.getValue('velocity'),
+            spriteAmount: spawnPoint.properties.getValue('SpriteAmount'),
           );
           add(enemy);
           break;
         case 'FinishFlag':
           final finishFlag = FinishFlag(
             position: spawnPoint.position,
+            name: spawnPoint.name,
             size: spawnPoint.size,
             spriteAmount: spawnPoint.properties.getValue('SpriteAmount'),
           );

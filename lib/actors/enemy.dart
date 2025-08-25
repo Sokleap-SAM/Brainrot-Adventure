@@ -4,7 +4,7 @@ import 'package:brainrot_adventure/brainrot_adventure.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-enum EnemyState { running, hit }
+enum EnemyState { horizonstalMovement, hit }
 
 enum EnemyDirection { left, right }
 
@@ -12,13 +12,14 @@ class Enemy extends SpriteAnimationGroupComponent
     with HasGameReference<BrainrotAdventure> {
   String enemyName;
   final double stepTime = 0.25;
-  late final SpriteAnimation runningAnimation, hitAnimation;
+  late final SpriteAnimation _horizontalMovementAnimation, _hitAnimation;
   double negativeRange;
   double positiveRange;
   bool isVerticalMovement;
   late double setVelocity;
   double velocity;
   double movement = -100;
+  int spriteAmount;
   RectangleHitbox enemyHitBox = RectangleHitbox(
     position: Vector2(8, 34),
     size: Vector2(48, 30),
@@ -28,11 +29,12 @@ class Enemy extends SpriteAnimationGroupComponent
   Enemy({
     super.position,
     super.size,
-    this.enemyName = 'Chubby Buck Tooth',
+    required this.enemyName,
     required this.negativeRange,
     required this.positiveRange,
     required this.isVerticalMovement,
     required this.velocity,
+    required this.spriteAmount,
   });
 
   @override
@@ -61,22 +63,22 @@ class Enemy extends SpriteAnimationGroupComponent
   }
 
   void _loadAnimation() {
-    runningAnimation = _spriteAnimation('run', 4);
+    _horizontalMovementAnimation = _spriteAnimation('HorizonstalMovement.png');
     // hitAnimation = _spriteAnimation('hit', 4)..loop = false;
 
     animations = {
-      EnemyState.running: runningAnimation,
+      EnemyState.horizonstalMovement: _horizontalMovementAnimation,
       // EnemyState.hit: hitAnimation,
     };
 
-    current = EnemyState.running;
+    current = EnemyState.horizonstalMovement;
   }
 
-  SpriteAnimation _spriteAnimation(String state, int amountFrame) {
+  SpriteAnimation _spriteAnimation(String state) {
     return SpriteAnimation.fromFrameData(
       game.images.fromCache("Enemy/$enemyName/$state.png"),
       SpriteAnimationData.sequenced(
-        amount: amountFrame,
+        amount: spriteAmount,
         stepTime: stepTime,
         textureSize: Vector2.all(64),
       ),

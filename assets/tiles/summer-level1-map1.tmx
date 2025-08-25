@@ -95,7 +95,7 @@
 25,14,15,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25
 </data>
  </layer>
- <objectgroup id="3" name="SpawnPoint" visible="0">
+ <objectgroup id="3" name="SpawnPoint">
   <object id="40" name="Player" type="Player" x="96" y="1136" width="64" height="64"/>
   <object id="43" name="BeachBall" type="Chest" x="2080" y="368" width="64" height="64">
    <properties>
@@ -125,7 +125,7 @@
     <property name="velocity" type="float" value="120"/>
    </properties>
   </object>
-  <object id="48" type="FinishFlag" x="2400" y="1136" width="64" height="64">
+  <object id="48" name="Sand Flag" type="FinishFlag" x="2400" y="1136" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>

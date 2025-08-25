@@ -19,8 +19,8 @@
         },
         "summer-level-01-map1.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 1,
@@ -31,26 +31,26 @@
         },
         "summer-level-01-map2.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 618.6666666666666,
-                "y": 376.66666666666674
+                "x": 1280.6666666666665,
+                "y": 720
             }
         },
         "summer-level1-map1.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 447.9999999999999,
-                "y": 1270
+                "x": 1284,
+                "y": 603.3333333333333
             }
         },
         "summer-level1-map2.tmx": {
@@ -125,8 +125,8 @@
             "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1958,
-                "y": 347
+                "x": 1151.5151515151515,
+                "y": 1295.4545454545455
             }
         },
         "summer_level_01.tmx": {
