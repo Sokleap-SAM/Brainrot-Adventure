@@ -1,4 +1,3 @@
-import 'package:brainrot_adventure/data/clear.dart';
 import 'package:brainrot_adventure/data/game_data_manager.dart';
 import 'package:brainrot_adventure/data/level_data_loader.dart';
 import 'package:brainrot_adventure/data/setting_data.dart';
