@@ -54,7 +54,7 @@
     "objectsToCollect": {
       "BeachBall": 1
     },
-    "timeLimitInSeconds": 200,
+    "timeLimitInSeconds": 180,
     "maps": ["summer-level4-map1"],
     "guide": []
   },
@@ -63,7 +63,7 @@
     "objectsToCollect": {
       "SandCastle": 1
     },
-    "timeLimitInSeconds": 250,
+    "timeLimitInSeconds": 180,
     "maps": ["summer-level5-map1"],
     "guide": []
   },
@@ -72,7 +72,7 @@
     "objectsToCollect": {
       "Umbrella": 1
     },
-    "timeLimitInSeconds": 250,
+    "timeLimitInSeconds": 200,
     "maps": ["summer-level6-map1"],
     "guide": []
   },
@@ -82,7 +82,7 @@
       "BeachBall": 1,
       "Umbrella": 1
     },
-    "timeLimitInSeconds": 400,
+    "timeLimitInSeconds": 240,
     "maps": ["summer-level7-map1", "summer-level7-map2"],
     "guide": []
   },
@@ -91,7 +91,7 @@
     "objectsToCollect": {
       "SandCastle": 1
     },
-    "timeLimitInSeconds": 600,
+    "timeLimitInSeconds": 420,
     "maps": ["summer-level8-map1", "summer-level8-map2", "summer-level8-map3"],
     "guide": [
       {

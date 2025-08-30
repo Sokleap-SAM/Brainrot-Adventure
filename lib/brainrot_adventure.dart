@@ -258,7 +258,7 @@ class BrainrotAdventure extends FlameGame
       currentMapIndex--;
       _loadLevel(isStartingPortal);
     } else {
-      if (currentMapIndex < maps.length - 1) {
+      if (currentMapIndex <= maps.length - 1) {
         currentMapIndex++;
         _loadLevel(isStartingPortal);
       } else {
