@@ -186,7 +186,7 @@
     <property name="isEmpty" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="11" name="BeachBall" type="Chest" x="368" y="1264" width="64" height="64">
+  <object id="11" name="BeachBall" type="Chest" x="1376" y="112" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="4"/>
     <property name="isEmpty" type="bool" value="false"/>
@@ -236,7 +236,7 @@
     <property name="velocity" type="float" value="150"/>
    </properties>
   </object>
-  <object id="105" type="FinishFlag" x="640" y="912" width="64" height="64">
+  <object id="105" name="SandFlag" type="FinishFlag" x="640" y="912" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>

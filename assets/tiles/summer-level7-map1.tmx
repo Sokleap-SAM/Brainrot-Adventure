@@ -354,7 +354,7 @@
     <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
-  <object id="80" name="SandPortal" type="Portal" x="2288" y="848" width="64" height="64">
+  <object id="80" name="SandPortal" type="Portal" x="2240" y="848" width="64" height="64">
    <properties>
     <property name="isStartingPortal" type="bool" value="false"/>
    </properties>

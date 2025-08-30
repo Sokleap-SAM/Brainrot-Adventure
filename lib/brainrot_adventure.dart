@@ -251,14 +251,15 @@ class BrainrotAdventure extends FlameGame
     }
   }
 
-  void loadNextLevel(bool isStartingPortal) {
+  Future<void> loadNextLevel(bool isStartingPortal) async {
     checkCurrentWorldObject();
     removeWhere((component) => component is Level);
+
     if (isStartingPortal) {
       currentMapIndex--;
       _loadLevel(isStartingPortal);
     } else {
-      if (currentMapIndex <= maps.length - 1) {
+      if (currentMapIndex < maps.length - 1) {
         currentMapIndex++;
         _loadLevel(isStartingPortal);
       } else {

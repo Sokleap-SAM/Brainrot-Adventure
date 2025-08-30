@@ -325,8 +325,8 @@ class Player extends SpriteAnimationGroupComponent
 
   void _reachPortal(bool isStartingPortal) async {
     reachPortal = true;
-    const waitToChangeDuration = Duration(seconds: 1);
     velocity = Vector2.all(0);
+    const waitToChangeDuration = Duration(seconds: 1);
     Future.delayed(
       waitToChangeDuration,
       () => game.loadNextLevel(isStartingPortal),
