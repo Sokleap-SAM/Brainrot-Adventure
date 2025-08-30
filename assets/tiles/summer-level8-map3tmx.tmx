@@ -126,7 +126,7 @@
     <property name="isEmpty" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="6" name="SandFlag" type="FinishFlag" x="48" y="576" width="64" height="64">
+  <object id="6" name="SandFlag" type="FinishFlag" x="80" y="576" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>
@@ -281,12 +281,12 @@
     <property name="isEmpty" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="36" name="SandPortal" type="Portal" x="64" y="1328" width="64" height="64">
+  <object id="36" name="SandPortal" type="Portal" x="128" y="1328" width="64" height="64">
    <properties>
     <property name="isStartingPortal" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="37" name="Player" type="Player" x="176" y="1328" width="64" height="64"/>
+  <object id="37" name="Player" type="Player" x="272" y="1328" width="64" height="64"/>
  </objectgroup>
  <objectgroup id="3" name="Collision">
   <object id="39" x="0" y="1392" width="2560" height="48"/>
