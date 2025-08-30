@@ -38,12 +38,17 @@ Make sure you have:
 ---
 
 ## ✅ How to Play
-1. Run the application.
 
-2. Click start, then select any level that you want to play.
+### Keys
 
-3. Collect all required objects, then read the flag to beat the level.
+- use key "A", "D" to walk left and right
+- use space bar key to jump
+- use key "S" to crounch
 
-4. Reach the portal to move to the next map (if there is any).
+### Goal
 
-Note: Objects are hidden in the chest. Some chests can be empty.
+Collect all required objects, then read the flag to beat the level.
+
+**Note:** Reach the portal to move to the next map (if there is any).
+
+**Note:** Objects are hidden in the chest. Some chests can be empty.
