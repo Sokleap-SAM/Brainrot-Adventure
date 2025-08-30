@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="85">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Tile Layer 1" width="160" height="90">
   <data encoding="csv">
@@ -47,10 +47,10 @@
 26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,25,
 2,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,
 14,15,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,13,
-26,27,25,1,2,3,1,2,3,1,2,3,1,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,2,3,1,2,3,1,2,3,1,2,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,25,
-2,3,1,13,14,15,13,14,15,13,14,15,13,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,14,15,13,14,15,13,14,15,13,14,15,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,
-14,15,13,25,26,27,25,26,27,25,26,27,25,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,26,27,25,26,27,25,26,27,25,26,27,27,0,0,0,0,0,0,0,0,0,0,0,0,49,50,51,49,50,51,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,13,
-26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,61,62,63,61,62,63,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,25,
+26,27,25,1,2,3,1,2,3,1,2,3,1,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,2,3,1,2,3,1,2,3,1,2,3,3,49,50,51,49,50,51,49,50,51,49,50,51,49,50,51,49,50,51,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,25,
+2,3,1,13,14,15,13,14,15,13,14,15,13,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,14,15,13,14,15,13,14,15,13,14,15,15,61,62,63,61,62,63,61,62,63,61,62,63,61,62,63,61,62,63,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,
+14,15,13,25,26,27,25,26,27,25,26,27,25,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,26,27,25,26,27,25,26,27,25,26,27,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,13,
+26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,25,
 2,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,50,51,49,50,51,49,50,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,
 14,15,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,61,62,63,61,62,63,61,62,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,13,
 26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,27,25,
@@ -84,17 +84,278 @@
 2,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,50,51,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,1,
 14,15,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,61,62,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,13,
 26,27,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,27,25,
-2,3,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,2,3,1,
-14,15,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,14,15,13,
-26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,26,27,25,
-2,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,2,3,1,
-14,15,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,14,15,13,
-26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,26,27,25,
+2,3,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,2,3,1,
+14,15,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,14,15,13,
+26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,26,27,25,
+2,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,0,0,0,0,0,0,2,3,1,
+14,15,13,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,14,15,0,0,0,0,0,0,14,15,13,
+26,27,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,26,27,0,0,0,0,0,0,26,27,25,
 1,26,27,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,25,26,27,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,
 13,2,3,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,14,15,13,
 25,14,15,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25
 </data>
  </layer>
- <objectgroup id="3" name="Collision"/>
- <objectgroup id="5" name="SpawnPoint"/>
+ <objectgroup id="3" name="Collision">
+  <object id="1" x="0" y="0" width="2560" height="48"/>
+  <object id="2" x="2512" y="48" width="48" height="1392"/>
+  <object id="3" x="0" y="1392" width="2512" height="48"/>
+  <object id="4" x="0" y="48" width="48" height="1344"/>
+  <object id="5" x="432" y="48" width="48" height="272"/>
+  <object id="6" x="192" y="272" width="240" height="48"/>
+  <object id="7" x="48" y="416" width="112" height="48"/>
+  <object id="8" type="Platform" x="176" y="560" width="48" height="32"/>
+  <object id="9" x="48" y="704" width="1072" height="48"/>
+  <object id="10" x="592" y="416" width="48" height="288"/>
+  <object id="11" x="480" y="528" width="112" height="48"/>
+  <object id="12" x="640" y="528" width="112" height="48"/>
+  <object id="13" x="848" y="272" width="144" height="48"/>
+  <object id="14" x="1552" y="48" width="48" height="848"/>
+  <object id="15" x="1600" y="256" width="144" height="48"/>
+  <object id="16" x="1872" y="48" width="48" height="144"/>
+  <object id="18" x="1168" y="416" width="384" height="48"/>
+  <object id="19" x="1760" y="432" width="160" height="48"/>
+  <object id="20" x="2080" y="512" width="160" height="48"/>
+  <object id="21" x="2240" y="48" width="48" height="144"/>
+  <object id="22" x="2208" y="320" width="96" height="48"/>
+  <object id="23" x="2288" y="864" width="144" height="48"/>
+  <object id="24" x="1760" y="1072" width="752" height="48"/>
+  <object id="25" x="1760" y="1120" width="48" height="96"/>
+  <object id="26" x="2192" y="1120" width="48" height="96"/>
+  <object id="27" x="2368" y="1296" width="48" height="96"/>
+  <object id="28" x="2032" y="1296" width="48" height="96"/>
+  <object id="29" x="1072" y="752" width="48" height="144"/>
+  <object id="30" x="224" y="880" width="48" height="336"/>
+  <object id="31" x="320" y="1296" width="48" height="96"/>
+  <object id="32" x="592" y="1296" width="48" height="96"/>
+  <object id="33" x="272" y="1024" width="576" height="48"/>
+  <object id="34" x="848" y="880" width="48" height="336"/>
+  <object id="35" x="592" y="752" width="48" height="96"/>
+  <object id="36" type="Platform" x="864" y="592" width="48" height="32"/>
+  <object id="37" type="Platform" x="1024" y="448" width="96" height="32"/>
+  <object id="39" type="Platform" x="1184" y="880" width="96" height="32"/>
+  <object id="40" type="Platform" x="1344" y="1024" width="96" height="32"/>
+  <object id="41" type="Platform" x="928" y="960" width="48" height="32"/>
+  <object id="42" type="Platform" x="1072" y="1056" width="48" height="32"/>
+  <object id="43" type="Platform" x="992" y="1200" width="96" height="32"/>
+  <object id="44" type="Platform" x="1440" y="1248" width="48" height="32"/>
+  <object id="45" type="Platform" x="1568" y="1136" width="96" height="32"/>
+  <object id="46" type="Platform" x="1920" y="768" width="144" height="32"/>
+  <object id="47" type="Platform" x="2144" y="848" width="48" height="32"/>
+  <object id="80" type="Platform" x="1120" y="704" width="288" height="32"/>
+  <object id="81" x="1600" y="608" width="144" height="48"/>
+ </objectgroup>
+ <objectgroup id="5" name="SpawnPoint">
+  <object id="50" name="Saws" type="SummerTraps" x="383" y="1328" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="48" name="SandFlag" type="FinishFlag" x="288" y="960" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="49" name="Player" type="Player" x="64" y="1328" width="64" height="64"/>
+  <object id="51" name="Saws" type="SummerTraps" x="447" y="1328" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="52" name="Saws" type="SummerTraps" x="511" y="1328" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="53" name="Saws" type="SummerTraps" x="2127" y="1120" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="54" name="Saws" type="SummerTraps" x="2239" y="1120" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="56" name="Saws" type="SummerTraps" x="1807" y="1120" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="57" name="Saws" type="SummerTraps" x="1871" y="1120" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="59" name="Umbrella" type="Chest" x="2448" y="1328" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="60" name="Umbrella" type="Chest" x="784" y="960" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="61" name="Umbrella" type="Chest" x="368" y="208" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="62" name="Umbrella" type="Chest" x="1600" y="192" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="63" name="Umbrella" type="Chest" x="1488" y="352" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="65" name="Saws" type="SummerTraps" x="1231" y="352" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="66" name="Saws" type="SummerTraps" x="1295" y="288" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="68" name="Saws" type="SummerTraps" x="223" y="48" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="69" name="Saws" type="SummerTraps" x="223" y="112" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="70" name="Saws" type="SummerTraps" x="527" y="416" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="72" name="Saws" type="SummerTraps" x="224" y="320" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="73" name="Saws" type="SummerTraps" x="1487" y="464" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="74" name="Saws" type="SummerTraps" x="1487" y="544" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="75" name="Saws" type="SummerTraps" x="1487" y="608" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="77" name="Saws" type="SummerTraps" x="1487" y="672" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="78" name="Saws" type="SummerTraps" x="1487" y="736" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="79" name="Saws" type="SummerTraps" x="1487" y="800" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="82" name="Saws" type="SummerTraps" x="1863" y="288" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="6"/>
+    <property name="rightTile" type="float" value="5"/>
+    <property name="velocity" type="float" value="50"/>
+   </properties>
+  </object>
+  <object id="83" name="Saws" type="SummerTraps" x="1611" y="416" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="6"/>
+    <property name="rightTile" type="float" value="5"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="84" name="Saws" type="SummerTraps" x="1684" y="416" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="6"/>
+    <property name="rightTile" type="float" value="5"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

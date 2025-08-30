@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="79">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="80">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Tile Layer 1" width="160" height="90">
   <data encoding="csv">
@@ -153,8 +153,6 @@
   </object>
   <object id="38" name="Chubby Buck Tooth" type="Enemy" x="1888" y="704" width="64" height="64">
    <properties>
-    <property name="SpriteAmount" type="int" value="4"/>
-    <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="negativeTile" type="float" value="18"/>
     <property name="positiveTile" type="float" value="18"/>
     <property name="velocity" type="float" value="120"/>
@@ -180,15 +178,6 @@
    </properties>
   </object>
   <object id="34" name="Player" type="Player" x="96" y="1328" width="64" height="64"/>
-  <object id="74" name="Two Skulled Bird" type="Enemy" x="1136" y="624" width="64" height="64">
-   <properties>
-    <property name="SpriteAmount" type="int" value="5"/>
-    <property name="isVerticalMovement" type="bool" value="false"/>
-    <property name="negativeTile" type="float" value="18"/>
-    <property name="positiveTile" type="float" value="18"/>
-    <property name="velocity" type="float" value="120"/>
-   </properties>
-  </object>
   <object id="75" name="Saws" type="SummerTraps" x="896" y="1248" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="true"/>
@@ -202,7 +191,7 @@
     <property name="isVerticalMovement" type="bool" value="true"/>
     <property name="leftTile" type="float" value="7"/>
     <property name="rightTile" type="float" value="6"/>
-    <property name="velocity" type="float" value="120"/>
+    <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
   <object id="77" name="Saws" type="SummerTraps" x="1184" y="1112" width="64" height="64">
@@ -210,7 +199,7 @@
     <property name="isVerticalMovement" type="bool" value="true"/>
     <property name="leftTile" type="float" value="7"/>
     <property name="rightTile" type="float" value="6"/>
-    <property name="velocity" type="float" value="120"/>
+    <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
   <object id="78" name="SandCastle" type="Chest" x="1184" y="1327" width="64" height="64">

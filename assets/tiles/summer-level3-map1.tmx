@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="74">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="77">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Tile Layer 1" width="160" height="90">
   <data encoding="csv">
@@ -179,7 +179,7 @@
     <property name="isVerticalMovement" type="bool" value="true"/>
     <property name="leftTile" type="float" value="7"/>
     <property name="rightTile" type="float" value="6"/>
-    <property name="velocity" type="float" value="120"/>
+    <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
   <object id="55" name="SandCastle" type="Chest" x="1488" y="1328" width="64" height="64">
@@ -292,19 +292,9 @@
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>
   </object>
-  <object id="71" name="Two Skulled Bird" type="Enemy" x="512" y="608" width="64" height="64">
-   <properties>
-    <property name="SpriteAmount" type="int" value="5"/>
-    <property name="isVerticalMovement" type="bool" value="false"/>
-    <property name="negativeTile" type="float" value="18"/>
-    <property name="positiveTile" type="float" value="18"/>
-    <property name="velocity" type="float" value="120"/>
-   </properties>
-  </object>
   <object id="72" name="Two Skulled Bird" type="Enemy" x="1840" y="608" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="5"/>
-    <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="negativeTile" type="float" value="18"/>
     <property name="positiveTile" type="float" value="18"/>
     <property name="velocity" type="float" value="120"/>
@@ -314,6 +304,26 @@
    <properties>
     <property name="SpriteAmount" type="int" value="4"/>
     <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="negativeTile" type="float" value="18"/>
+    <property name="positiveTile" type="float" value="18"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="74" name="Acid Lion" type="Enemy" x="672" y="1264" width="231" height="128">
+   <properties>
+    <property name="firingRangeInTiles" type="float" value="50"/>
+   </properties>
+  </object>
+  <object id="75" name="Nuclear Eagle" type="Enemy" x="496" y="1072" width="128" height="121">
+   <properties>
+    <property name="firingRangeInTiles" type="float" value="20"/>
+    <property name="negativeTile" type="float" value="18"/>
+    <property name="positiveTile" type="float" value="18"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="76" name="Two Skulled Bird" type="Enemy" x="704" y="608" width="64" height="64">
+   <properties>
     <property name="negativeTile" type="float" value="18"/>
     <property name="positiveTile" type="float" value="18"/>
     <property name="velocity" type="float" value="120"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="1">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="160" height="90" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="62">
  <tileset firstgid="1" source="summer terrain.tsx"/>
  <layer id="1" name="Tile Layer 1" width="160" height="90">
   <data encoding="csv">
@@ -95,6 +95,183 @@
 25,14,15,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25,26,27,25
 </data>
  </layer>
- <objectgroup id="2" name="Collision"/>
- <objectgroup id="4" name="SpawnPoint"/>
+ <objectgroup id="2" name="Collision">
+  <object id="1" x="0" y="0" width="2560" height="48"/>
+  <object id="2" x="0" y="48" width="48" height="1392"/>
+  <object id="3" x="48" y="1392" width="2512" height="48"/>
+  <object id="4" x="2512" y="48" width="48" height="1344"/>
+  <object id="5" x="320" y="48" width="48" height="112"/>
+  <object id="6" x="368" y="112" width="880" height="48"/>
+  <object id="7" x="1248" y="48" width="48" height="112"/>
+  <object id="8" x="1296" y="112" width="896" height="48"/>
+  <object id="9" x="2192" y="48" width="48" height="112"/>
+  <object id="10" x="320" y="432" width="1920" height="48"/>
+  <object id="11" x="2064" y="384" width="32" height="48"/>
+  <object id="12" x="464" y="384" width="32" height="48"/>
+  <object id="13" type="Platform" x="208" y="496" width="96" height="32"/>
+  <object id="14" type="Platform" x="112" y="688" width="96" height="32"/>
+  <object id="15" type="Platform" x="320" y="768" width="96" height="32"/>
+  <object id="16" type="Platform" x="752" y="608" width="96" height="32"/>
+  <object id="17" x="480" y="480" width="48" height="160"/>
+  <object id="18" x="480" y="768" width="640" height="48"/>
+  <object id="19" x="1072" y="480" width="48" height="160"/>
+  <object id="20" type="Platform" x="160" y="1120" width="96" height="32"/>
+  <object id="23" type="Platform" x="352" y="1232" width="48" height="32"/>
+  <object id="24" x="320" y="960" width="1920" height="48"/>
+  <object id="25" x="1248" y="480" width="48" height="320"/>
+  <object id="26" x="1440" y="800" width="48" height="160"/>
+  <object id="27" x="1440" y="624" width="640" height="48"/>
+  <object id="28" x="2032" y="800" width="48" height="160"/>
+  <object id="29" type="Platform" x="1712" y="800" width="112" height="32"/>
+  <object id="30" type="Platform" x="2256" y="480" width="96" height="32"/>
+  <object id="31" type="Platform" x="2352" y="704" width="96" height="32"/>
+  <object id="32" type="Platform" x="2352" y="1088" width="96" height="32"/>
+  <object id="33" type="Platform" x="2224" y="1200" width="48" height="32"/>
+  <object id="34" x="2448" y="1360" width="32" height="32"/>
+  <object id="35" x="1264" y="1040" width="32" height="32"/>
+  <object id="36" x="960" y="1072" width="640" height="48"/>
+  <object id="37" x="960" y="1232" width="640" height="48"/>
+  <object id="38" x="1264" y="1120" width="48" height="112"/>
+  <object id="39" x="80" y="1360" width="32" height="32"/>
+  <object id="50" name="Saws" type="SummerTraps" x="560" y="928" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="15"/>
+    <property name="rightTile" type="float" value="15"/>
+    <property name="velocity" type="float" value="250"/>
+   </properties>
+  </object>
+  <object id="53" name="Saws" type="SummerTraps" x="768" y="736" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="150"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="SpawnPoint">
+  <object id="41" name="Player" type="Player" x="160" y="1328" width="64" height="64"/>
+  <object id="43" name="SandFlag" type="FinishFlag" x="1088" y="1168" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="44" name="BeachBall" type="Chest" x="768" y="544" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="45" name="BeachBall" type="Chest" x="1728" y="736" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="46" name="BeachBall" type="Chest" x="1632" y="368" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="47" name="BeachBall" type="Chest" x="800" y="368" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="48" name="Two Skulled Bird" type="Enemy" x="624" y="1152" width="64" height="64">
+   <properties>
+    <property name="negativeTile" type="float" value="17"/>
+    <property name="positiveTile" type="float" value="17"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="49" name="Two Skulled Bird" type="Enemy" x="1872" y="1120" width="64" height="64">
+   <properties>
+    <property name="negativeTile" type="float" value="17"/>
+    <property name="positiveTile" type="float" value="17"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="54" name="Chubby Buck Tooth" type="Enemy" x="896" y="368" width="64" height="64">
+   <properties>
+    <property name="negativeTile" type="float" value="25"/>
+    <property name="positiveTile" type="float" value="25"/>
+    <property name="velocity" type="float" value="150"/>
+   </properties>
+  </object>
+  <object id="55" name="Chubby Buck Tooth" type="Enemy" x="1520" y="368" width="64" height="64">
+   <properties>
+    <property name="negativeTile" type="float" value="30"/>
+    <property name="positiveTile" type="float" value="30"/>
+    <property name="velocity" type="float" value="150"/>
+   </properties>
+  </object>
+  <object id="52" name="Saws" type="SummerTraps" x="1728" y="928" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="150"/>
+   </properties>
+  </object>
+  <object id="51" name="Saws" type="SummerTraps" x="1040" y="928" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="15"/>
+    <property name="rightTile" type="float" value="15"/>
+    <property name="velocity" type="float" value="250"/>
+   </properties>
+  </object>
+  <object id="56" name="Saws" type="SummerTraps" x="2022" y="672" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="57" name="Saws" type="SummerTraps" x="2022" y="736" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="58" name="Saws" type="SummerTraps" x="1990" y="592" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="59" name="Saws" type="SummerTraps" x="1702" y="592" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="60" name="Saws" type="SummerTraps" x="1478" y="592" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="0"/>
+   </properties>
+  </object>
+  <object id="61" name="Saws" type="SummerTraps" x="2150" y="240" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="true"/>
+    <property name="leftTile" type="float" value="5"/>
+    <property name="rightTile" type="float" value="8"/>
+    <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
