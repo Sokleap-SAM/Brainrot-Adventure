@@ -8,8 +8,8 @@ class AudioManager {
 
   static AudioManager get instance => _instance;
 
-  double musicVolume = 0.05;
-  double sfxVolume = 0.05;
+  late double musicVolume;
+  late double sfxVolume;
   final Map<String, AudioPool> _sfxPools = {};
 
   Future<void> init(List<String> files) async {

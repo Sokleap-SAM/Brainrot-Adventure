@@ -204,7 +204,7 @@ class BrainrotAdventure extends FlameGame
     await AudioManager.instance.init(audioList);
 
     cam = CameraComponent.withFixedResolution(
-      world: World(), // Create a placeholder world for the camera
+      world: World(),
       width: 1280,
       height: 720,
     );
@@ -226,13 +226,26 @@ class BrainrotAdventure extends FlameGame
     cam.viewport.add(_timerText);
 
     _loadLevel(false);
-    if (levelNumber == 1) {
-      overlays.add('LevelGuideOverlay');
-    } else {
-      startTimer();
-    }
+    _showLevelGuide();
 
     return super.onLoad();
+  }
+
+  void _showLevelGuide() {
+    switch (levelNumber) {
+      case 1:
+        overlays.add('LevelGuideOverlay');
+        break;
+      case 5:
+        overlays.add('LevelGuideOverlay');
+        break;
+      case 8:
+        overlays.add('LevelGuideOverlay');
+        break;
+      default:
+        startTimer();
+        break;
+    }
   }
 
   void loadNextLevel(bool isStartingPortal) {

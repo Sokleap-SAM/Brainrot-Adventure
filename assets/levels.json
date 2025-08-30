@@ -5,7 +5,17 @@
       "BeachBall": 1
     },
     "timeLimitInSeconds": 80,
-    "maps": ["summer-level1-map1"]
+    "maps": ["summer-level1-map1"],
+    "guide": [
+      {
+        "title": "Welcome to Level 1!",
+        "content": "Your journey begins here. All summer items hidden in the chest waiting for you to find."
+      },
+      {
+        "title": "Mission: Collect all the items!",
+        "content": "Your mission is to collect all the specific items and get to the flag."
+      }
+    ]
   },
   {
     "levelNumber": 2,
@@ -13,7 +23,13 @@
       "SandCastle": 1
     },
     "timeLimitInSeconds": 100,
-    "maps": ["summer-level2-map1"]
+    "maps": ["summer-level2-map1"],
+    "guide": [
+      {
+        "title": "Welcome to Level 2: The Rat is Loose!",
+        "content": "This level introduces a new enemy: the Chubby Buck Tooth. This sneaky rat patrols a small area, running back and forth. You can defeat it by jumping on its head. Just be careful not to get caught in its path."
+      }
+    ]
   },
   {
     "levelNumber": 3,
@@ -21,6 +37,71 @@
       "SandCastle": 1
     },
     "timeLimitInSeconds": 150,
-    "maps": ["summer-level3-map1"]
+    "maps": ["summer-level3-map1"],
+    "guide": [
+      {
+        "title": "Level 3: The Two-Skulled Bird",
+        "content": "A new flying enemy, the Two-Skulled Bird, now patrols this level. It flies back and forth, so be careful not to walk into its path. Like the other enemies, you can defeat it by jumping on its head."
+      }
+    ]
+  },
+    {
+    "levelNumber": 4,
+    "objectsToCollect": {
+      "BeachBall": 1
+    },
+    "timeLimitInSeconds": 200,
+    "maps": ["summer-level4-map1"],
+    "guide": []
+  },
+    {
+    "levelNumber": 5,
+    "objectsToCollect": {
+      "SandCastle": 1
+    },
+    "timeLimitInSeconds": 250,
+    "maps": ["summer-level5-map1"],
+    "guide": []
+  },
+    {
+    "levelNumber": 6,
+    "objectsToCollect": {
+      "Umbrella": 1
+    },
+    "timeLimitInSeconds": 250,
+    "maps": ["summer-level6-map1"],
+    "guide": []
+  },
+    {
+    "levelNumber": 7,
+    "objectsToCollect": {
+      "BeachBall": 1,
+      "Umbrella": 1
+    },
+    "timeLimitInSeconds": 400,
+    "maps": ["summer-level7-map1", "summer-level7-mapw"],
+    "guide": []
+  },
+    {
+    "levelNumber": 8,
+    "objectsToCollect": {
+      "SandCastle": 1
+    },
+    "timeLimitInSeconds": 600,
+    "maps": ["summer-level8-map1", "summer-level8-map2", "summer-level8-map3"],
+    "guide": [
+      {
+        "title": "Welcome to Level 8: FInal Level",
+        "content": "This level introduces two new enemies: the Nuclear Eagle and the Acid Lion. Both pose a significant threat. Study their attack patterns to survive!"
+      },
+      {
+        "title": "The Nuclear Eagle: The Sky's Fury",
+        "content": "This flying beast can't be defeated by jumping on its head. It flies on a set path and drops deadly poison. To pass, time your movements to avoid the poison and its flight path."
+      },
+      {
+        "title": "The Acid Lion: The Acidic Menace",
+        "content": "The Acid Lion shoots powerful acid projectiles from its mouth when it sees you. To survive, you must stay out of its sight range. If you get too close, jump and move quickly to dodge the projectiles."
+      }
+    ]
   }
 ]

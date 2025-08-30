@@ -1,11 +1,14 @@
 import 'dart:async';
 
+import 'package:brainrot_adventure/actors/acid_lion.dart';
+import 'package:brainrot_adventure/actors/chubby_buck_tooth.dart';
+import 'package:brainrot_adventure/actors/nuclear_eagle.dart';
+import 'package:brainrot_adventure/actors/two_skulled_bird.dart';
 import 'package:brainrot_adventure/components/chest.dart';
 import 'package:brainrot_adventure/components/collision_block.dart';
 import 'package:brainrot_adventure/components/finish_flag.dart';
 import 'package:brainrot_adventure/components/portal.dart';
 import 'package:brainrot_adventure/components/summer_traps.dart';
-import 'package:brainrot_adventure/actors/enemy.dart';
 import 'package:brainrot_adventure/actors/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
@@ -97,22 +100,58 @@ class Level extends World {
           }
           break;
         case 'Enemy':
-          final enemy = Enemy(
-            position: spawnPoint.position,
-            size: spawnPoint.size,
-            enemyName: spawnPoint.name,
-            negativeRange: spawnPoint.properties.getValue('positiveTile') * 16,
-            positiveRange: spawnPoint.properties.getValue('negativeTile') * 16,
-            isVerticalMovement: spawnPoint.properties.getValue(
-              'isVerticalMovement',
-            ),
-            velocity: spawnPoint.properties.getValue('velocity'),
-            spriteAmount: spawnPoint.properties.getValue('SpriteAmount'),
-          );
-          add(enemy);
+          if (spawnPoint.name == "Chubby Buck Tooth") {
+            final enemy = ChubbyBuckTooth(
+              position: spawnPoint.position,
+              size: spawnPoint.size,
+              enemyName: spawnPoint.name,
+              negativeRange:
+                  spawnPoint.properties.getValue('positiveTile') * 16,
+              positiveRange:
+                  spawnPoint.properties.getValue('negativeTile') * 16,
+              velocity: spawnPoint.properties.getValue('velocity'),
+            );
+            add(enemy);
+          } else if (spawnPoint.name == "Two Skulled Bird") {
+            final enemy = TwoSkulledBird(
+              position: spawnPoint.position,
+              size: spawnPoint.size,
+              enemyName: spawnPoint.name,
+              negativeRange:
+                  spawnPoint.properties.getValue('positiveTile') * 16,
+              positiveRange:
+                  spawnPoint.properties.getValue('negativeTile') * 16,
+              velocity: spawnPoint.properties.getValue('velocity'),
+            );
+            add(enemy);
+          } else if (spawnPoint.name == "Acid Lion") {
+            final enemy = AcidLion(
+              position: spawnPoint.position,
+              size: spawnPoint.size,
+              enemyName: spawnPoint.name,
+              firingRangeInTiles: spawnPoint.properties.getValue(
+                'firingRangeInTiles',
+              ),
+            );
+            add(enemy);
+          } else if (spawnPoint.name == 'Nuclear Eagle') {
+            final enemy = NuclearEagle(
+              position: spawnPoint.position,
+              size: spawnPoint.size,
+              enemyName: spawnPoint.name,
+              negativeRange:
+                  spawnPoint.properties.getValue('negativeTile') * 16,
+              positiveRange:
+                  spawnPoint.properties.getValue('positiveTile') * 16,
+              velocity: spawnPoint.properties.getValue('velocity'),
+              firingRangeInTiles: spawnPoint.properties.getValue(
+                'firingRangeInTiles',
+              ),
+            );
+            add(enemy);
+          }
           break;
         case 'FinishFlag':
-          print('${spawnPoint.name}');
           final finishFlag = FinishFlag(
             position: spawnPoint.position,
             name: spawnPoint.name,

@@ -9,7 +9,6 @@ import 'package:brainrot_adventure/components/finish_flag.dart';
 import 'package:brainrot_adventure/components/portal.dart';
 import 'package:brainrot_adventure/components/summer_objects.dart';
 import 'package:brainrot_adventure/components/summer_traps.dart';
-import 'package:brainrot_adventure/actors/enemy.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
@@ -36,14 +35,14 @@ class Player extends SpriteAnimationGroupComponent
   // final double _fixedDeltaTime = 1 / 60;
 
   PlayerDirection playerDirection = PlayerDirection.none;
-  double moveSpeed = 500.0;
+  double moveSpeed = 300.0;
   Vector2 velocity = Vector2.zero();
   bool isFacingLeft = false;
 
   bool isJumping = false;
   final double gravity = 9.8;
-  final double jumpForce = -1000.0;
-  final double terminalVelocity = 300;
+  final double jumpForce = -600.0;
+  final double terminalVelocity = 350;
 
   bool isOnGround = false;
   bool isCrouch = false;
@@ -152,7 +151,7 @@ class Player extends SpriteAnimationGroupComponent
 
     isCrouch = isDownKeyPressed && isOnGround;
     if (isCrouch) {
-      playerHitBox.size = Vector2(34, 34); // Width remains same, height reduced
+      playerHitBox.size = Vector2(34, 34);
       playerHitBox.position = Vector2(15, 30);
     } else {
       playerHitBox.size = Vector2(44, 58);
@@ -221,7 +220,7 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _applyGravity(double dt) {
-    velocity.y += gravity; // Always apply gravity
+    velocity.y += gravity;
     velocity.y = velocity.y.clamp(jumpForce, terminalVelocity);
     position.y += velocity.y * dt;
   }
@@ -287,9 +286,9 @@ class Player extends SpriteAnimationGroupComponent
       if (other is Chest) {
         other.chestCollideWithPlayer();
       }
-      if (other is Enemy) {
-        _respawn();
-      }
+      // if (other is Enemy) {
+      //   _respawn();
+      // }
       if (other is Portal) {
         _reachPortal(other.getPortalType());
       }

@@ -11,7 +11,7 @@ class LevelSelectionScreen extends StatefulWidget {
 
 class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
   int _currentChapter = 1;
-  static const int _levelsPerChapter = 9;
+  static const int _levelsPerChapter = 8; // Change to 8 levels
   static const int _levelsPerRow = 3;
   static const int _totalChapters = 3;
 
@@ -59,36 +59,49 @@ class _LevelSelectionScreenState extends State<LevelSelectionScreen> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 300.0),
-                        child: GridView.builder(
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: _levelsPerRow,
-                                crossAxisSpacing: 30.0,
-                                mainAxisSpacing: 30.0,
-                              ),
-                          itemCount: _levelsPerChapter,
-                          itemBuilder: (context, index) {
-                            final int levelNumber = startLevel + index;
-                            final bool isPreviousLevelCompleted =
-                                (levelNumber == 1) ||
-                                completedLevels.contains(levelNumber - 1);
-                            final bool isUnlocked = isPreviousLevelCompleted;
-                            final int highScore =
-                                GameDataManager.getHighScoreForLevel(
-                                  levelNumber,
-                                );
-                            final int starRating = _getStarRatingFromScore(
-                              highScore,
-                            );
+                        child:
+                            _currentChapter ==
+                                1 // Conditional check
+                            ? GridView.builder(
+                                gridDelegate:
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: _levelsPerRow,
+                                      crossAxisSpacing: 30.0,
+                                      mainAxisSpacing: 30.0,
+                                    ),
+                                itemCount: _levelsPerChapter,
+                                itemBuilder: (context, index) {
+                                  final int levelNumber = startLevel + index;
+                                  final bool isPreviousLevelCompleted =
+                                      (levelNumber == 1) ||
+                                      completedLevels.contains(levelNumber - 1);
+                                  final bool isUnlocked =
+                                      isPreviousLevelCompleted;
+                                  final int highScore =
+                                      GameDataManager.getHighScoreForLevel(
+                                        levelNumber,
+                                      );
+                                  final int starRating =
+                                      _getStarRatingFromScore(highScore);
 
-                            return _buildLevelCard(
-                              context,
-                              levelNumber,
-                              starRating,
-                              isUnlocked,
-                            );
-                          },
-                        ),
+                                  return _buildLevelCard(
+                                    context,
+                                    levelNumber,
+                                    starRating,
+                                    isUnlocked,
+                                  );
+                                },
+                              )
+                            : const Center(
+                                child: Text(
+                                  'Coming Soon!',
+                                  style: TextStyle(
+                                    fontSize: 60,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                       ),
                     ),
                     const SizedBox(height: 50),

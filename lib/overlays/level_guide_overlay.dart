@@ -3,8 +3,13 @@ import 'package:brainrot_adventure/brainrot_adventure.dart';
 
 class LevelGuideOverlay extends StatefulWidget {
   final BrainrotAdventure game;
+  final List<Map<String, String>> guideData;
 
-  const LevelGuideOverlay({super.key, required this.game});
+  const LevelGuideOverlay({
+    super.key,
+    required this.game,
+    required this.guideData,
+  });
 
   @override
   State<LevelGuideOverlay> createState() => _LevelGuideOverlayState();
@@ -37,26 +42,12 @@ class _LevelGuideOverlayState extends State<LevelGuideOverlay> {
                     _currentPage = page;
                   });
                 },
-                children: const [
-                  // Page 1: Welcome
-                  GuidePage(
-                    title: 'Welcome to Brainrot Adventure!',
-                    content:
-                        'Your journey begins here. All summer items hidden in the chest waiting for you to find.',
-                  ),
-                  // Page 2: Mission
-                  GuidePage(
-                    title: 'Collect all the items!',
-                    content:
-                        'Your mission is to collect all the specific items and get to the flag.',
-                  ),
-                  // Page 3: Enemies
-                  GuidePage(
-                    title: 'Beware of Enemies and Traps',
-                    content:
-                        'Avoid enemies and traps or you will lose a life! Collect all the items to advance!',
-                  ),
-                ],
+                children: widget.guideData.map((data) {
+                  return GuidePage(
+                    title: data['title']!,
+                    content: data['content']!,
+                  );
+                }).toList(),
               ),
             ),
             const SizedBox(height: 20),

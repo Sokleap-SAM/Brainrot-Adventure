@@ -76,7 +76,7 @@ class MenuOverlay extends StatelessWidget {
               onPressed: () {
                 game.overlays.remove('MenuOverlay');
 
-                Navigator.of(context).popUntil((route) => route.isFirst);
+                Navigator.of(context).popAndPushNamed('/level_select');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.orange,

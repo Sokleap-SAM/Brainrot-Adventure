@@ -3,14 +3,14 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "summer-level-01-map5.tmx",
+    "activeFile": "summer-level3-map1.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "summer terrain.tsx": {
-            "scaleInDock": 1,
+            "scaleInDock": 2,
             "scaleInEditor": 1
         },
         "summer terrain_v2.tsx": {
@@ -25,8 +25,8 @@
             "scale": 0.75,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1283.3333333333333,
-                "y": 1230.6666666666665
+                "x": 303.3333333333333,
+                "y": 872.6666666666667
             }
         },
         "summer-level-01-map2.tmx": {
@@ -37,8 +37,8 @@
             "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1281,
-                "y": 720
+                "x": 945,
+                "y": 251
             }
         },
         "summer-level-01-map5.tmx": {
@@ -52,15 +52,32 @@
                 "y": 693
             }
         },
+        "summer-level-01-map6.tmx": {
+            "scale": 0.42638671875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1280.5276899821356,
+                "y": 718.8310201090193
+            }
+        },
+        "summer-level-01-map8.tmx": {
+            "scale": 0.4275,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1280.701754385965,
+                "y": 719.2982456140351
+            }
+        },
         "summer-level1-map1.tmx": {
             "expandedObjectLayers": [
+                4,
                 3
             ],
-            "scale": 0.5,
-            "selectedLayer": 2,
+            "scale": 0.33,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 564,
-                "y": 1171
+                "x": 1665.151515151515,
+                "y": 674.2424242424241
             }
         },
         "summer-level1-map2.tmx": {
@@ -82,8 +99,8 @@
             "scale": 0.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 972,
-                "y": 861
+                "x": 1285,
+                "y": 719
             }
         },
         "summer-level3-map1.tmx": {
@@ -91,23 +108,119 @@
                 3,
                 2
             ],
-            "scale": 0.75,
+            "scale": 0.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 640,
-                "y": 261.99999999999994
+                "x": 1255,
+                "y": 733
+            }
+        },
+        "summer-level4-map1.tmx": {
+            "expandedObjectLayers": [
+                4,
+                2
+            ],
+            "scale": 0.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1233,
+                "y": 701
+            }
+        },
+        "summer-level5-map1.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1395.4545454545455,
+                "y": 950.0000000000001
+            }
+        },
+        "summer-level6-map1.tmx": {
+            "expandedObjectLayers": [
+                3,
+                5
+            ],
+            "scale": 0.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": -253,
+                "y": 1095
+            }
+        },
+        "summer-level7-map1.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 0.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1579,
+                "y": 1005
+            }
+        },
+        "summer-level7-map2.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 688.5,
+                "y": 389.5
+            }
+        },
+        "summer-level8-map1.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1134.5,
+                "y": 774.5
+            }
+        },
+        "summer-level8-map2.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 173.5,
+                "y": 440.5
+            }
+        },
+        "summer-level8-map3tmx.tmx": {
+            "expandedObjectLayers": [
+                3,
+                2
+            ],
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 969,
+                "y": 943
             }
         },
         "summer_level_01.tmx": {
             "expandedObjectLayers": [
-                2,
-                3
+                3,
+                2
             ],
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1340,
-                "y": 879.3333333333333
+                "x": 294.66666666666663,
+                "y": 723.3333333333333
             }
         },
         "summer_level_01_part2.tmx": {
@@ -130,25 +243,31 @@
     "map.tileWidth": 16,
     "map.width": 160,
     "openFiles": [
-        "summer-level-01-map1.tmx",
-        "summer-level-01-map2.tmx",
-        "summer-level1-map1.tmx",
-        "summer-level2-map1.tmx",
-        "summer-level-01-map5.tmx"
+        "summer-level3-map1.tmx",
+        "summer-level4-map1.tmx",
+        "summer-level6-map1.tmx",
+        "summer-level7-map1.tmx",
+        "summer-level5-map1.tmx",
+        "summer-level8-map1.tmx",
+        "summer-level8-map2.tmx",
+        "summer-level8-map3tmx.tmx",
+        "summer-level2-map1.tmx"
     ],
     "project": "brainrot_adventure.tiled-project",
-    "property.type": "int",
+    "property.type": "float",
     "recentFiles": [
+        "summer-level2-map1.tmx",
+        "summer-level8-map3tmx.tmx",
+        "summer-level8-map2.tmx",
+        "summer-level8-map1.tmx",
+        "summer-level5-map1.tmx",
+        "summer-level7-map1.tmx",
+        "summer-level6-map1.tmx",
+        "summer-level4-map1.tmx",
+        "summer-level3-map1.tmx",
         "summer-level-01-map1.tmx",
         "summer-level-01-map2.tmx",
-        "summer-level1-map1.tmx",
-        "summer-level2-map1.tmx",
-        "summer-level-01-map5.tmx",
-        "summer-level1-map2.tmx",
-        "summer_level_01.tmx",
-        "summer_level_01_part2.tmx",
-        "summer terrain.tsx",
-        "summer terrain_v2.tsx"
+        "summer-level7-map2.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

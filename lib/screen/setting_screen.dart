@@ -10,7 +10,6 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  // 2. Declare state variables for current volume levels
   late double _currentMusicVolume;
   late double _currentSfxVolume;
 
@@ -25,18 +24,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Settings'),
-      //   backgroundColor: Colors.blue.shade700,
-      //   foregroundColor: Colors.white,
-      //   leading: IconButton(
-      //     icon: const Icon(Icons.arrow_back),
-      //     onPressed: () {
-      //       AudioManager.instance.resumeBgm();
-      //       Navigator.of(context).pop();
-      //     },
-      //   ),
-      // ),
+      appBar: AppBar(
+        title: const Text('Settings'),
+        backgroundColor: Colors.blue.shade700,
+        foregroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            AudioManager.instance.resumeBgm();
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(

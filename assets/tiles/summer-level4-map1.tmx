@@ -133,22 +133,6 @@
   <object id="37" x="960" y="1232" width="640" height="48"/>
   <object id="38" x="1264" y="1120" width="48" height="112"/>
   <object id="39" x="80" y="1360" width="32" height="32"/>
-  <object id="50" name="Saws" type="SummerTraps" x="560" y="928" width="64" height="64">
-   <properties>
-    <property name="isVerticalMovement" type="bool" value="false"/>
-    <property name="leftTile" type="float" value="15"/>
-    <property name="rightTile" type="float" value="15"/>
-    <property name="velocity" type="float" value="250"/>
-   </properties>
-  </object>
-  <object id="53" name="Saws" type="SummerTraps" x="768" y="736" width="64" height="64">
-   <properties>
-    <property name="isVerticalMovement" type="bool" value="false"/>
-    <property name="leftTile" type="float" value="14"/>
-    <property name="rightTile" type="float" value="14"/>
-    <property name="velocity" type="float" value="150"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup id="4" name="SpawnPoint">
   <object id="41" name="Player" type="Player" x="160" y="1328" width="64" height="64"/>
@@ -158,12 +142,6 @@
    </properties>
   </object>
   <object id="44" name="BeachBall" type="Chest" x="768" y="544" width="64" height="64">
-   <properties>
-    <property name="SpriteAmount" type="int" value="4"/>
-    <property name="isEmpty" type="bool" value="true"/>
-   </properties>
-  </object>
-  <object id="45" name="BeachBall" type="Chest" x="1728" y="736" width="64" height="64">
    <properties>
     <property name="SpriteAmount" type="int" value="4"/>
     <property name="isEmpty" type="bool" value="true"/>
@@ -271,6 +249,28 @@
     <property name="leftTile" type="float" value="5"/>
     <property name="rightTile" type="float" value="8"/>
     <property name="velocity" type="float" value="120"/>
+   </properties>
+  </object>
+  <object id="45" name="BeachBall" type="Chest" x="1728" y="736" width="64" height="64">
+   <properties>
+    <property name="SpriteAmount" type="int" value="4"/>
+    <property name="isEmpty" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="53" name="Saws" type="SummerTraps" x="768" y="736" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="14"/>
+    <property name="rightTile" type="float" value="14"/>
+    <property name="velocity" type="float" value="150"/>
+   </properties>
+  </object>
+  <object id="50" name="Saws" type="SummerTraps" x="560" y="928" width="64" height="64">
+   <properties>
+    <property name="isVerticalMovement" type="bool" value="false"/>
+    <property name="leftTile" type="float" value="15"/>
+    <property name="rightTile" type="float" value="15"/>
+    <property name="velocity" type="float" value="250"/>
    </properties>
   </object>
  </objectgroup>

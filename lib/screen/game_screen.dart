@@ -22,6 +22,7 @@ class _GameScreenState extends State<GameScreen> {
   late VideoPlayerController _victoryVideoController;
   late VideoPlayerController _gameOverVideoController;
   late BrainrotAdventure _game;
+  late LevelData _levelData;
   bool _showVideo = false;
   bool _isLoading = true;
   bool isGameOver = false;
@@ -71,7 +72,14 @@ class _GameScreenState extends State<GameScreen> {
   Future<void> _initializeGame() async {
     final args = ModalRoute.of(context)?.settings.arguments;
     int? level = (args is int) ? args : 1;
-    final LevelData levelData = LevelDataLoader.getLevelData(level);
+    _levelData = LevelDataLoader.getLevelData(level);
+    AudioManager.instance.setMusicVolume(
+      GameDataManager.loadSettings()?.bgmVolume ?? 0.05,
+    );
+
+    AudioManager.instance.setSFXVolume(
+      GameDataManager.loadSettings()?.sfxVolume ?? 0.05,
+    );
 
     _game = BrainrotAdventure(
       levelNumber: level,
@@ -80,9 +88,9 @@ class _GameScreenState extends State<GameScreen> {
         isGameOver = true;
         _playVideo();
       },
-      collectibleObjects: Map<String, int>.from(levelData.objects),
-      maps: levelData.maps,
-      remainingTime: levelData.timeLimitInSeconds.toDouble(),
+      collectibleObjects: Map<String, int>.from(_levelData.objects),
+      maps: _levelData.maps,
+      remainingTime: _levelData.timeLimitInSeconds.toDouble(),
     );
 
     if (mounted) {
@@ -205,13 +213,16 @@ class _GameScreenState extends State<GameScreen> {
             return MenuOverlay(game: game);
           },
           'LevelGuideOverlay': (BuildContext context, BrainrotAdventure game) {
-            return LevelGuideOverlay(game: game);
+            return LevelGuideOverlay(
+              game: game,
+              guideData: _levelData.guideData,
+            );
           },
           'GameOverOverlay': (BuildContext context, BrainrotAdventure game) {
-            return GameOverOverlay(game: _game);
+            return GameOverOverlay(game: game);
           },
           'VictoryOverlay': (BuildContext context, BrainrotAdventure game) {
-            return VictoryOverlay(game: _game);
+            return VictoryOverlay(game: game);
           },
         },
       ),

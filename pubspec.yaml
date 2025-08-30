@@ -85,8 +85,10 @@ flutter:
     - assets/images/Flag/
     - assets/images/Portal/
     - assets/images/Enemy/Two Skulled Bird/
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+    - assets/images/Enemy/Acid Lion/
+    - assets/images/Enemy/Nuclear Eagle/
+    - assets/images/Projectile/Acid/
+    - assets/images/Projectile/Poison/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

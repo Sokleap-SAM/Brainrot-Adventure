@@ -53,6 +53,10 @@ class GameDataManager {
     return gameData?.highScores[level] ?? 0;
   }
 
+  static SettingsData? loadSettings() {
+    return _settingsBox.get(_settingsKey);
+  }
+
   static Future<void> saveSettings({
     double? bgmVolume,
     double? sfxVolume,
