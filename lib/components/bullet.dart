@@ -59,7 +59,7 @@ class Bullet extends SpriteAnimationComponent
     super.update(dt);
   }
 
-  // void objectCollideWithPlayer() async {
-  //   removeFromParent();
-  // }
+  void bulletCollideWithPlayer() async {
+    removeFromParent();
+  }
 }

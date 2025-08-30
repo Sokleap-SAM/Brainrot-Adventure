@@ -111,6 +111,7 @@ class NuclearEagle extends SpriteAnimationComponent
       bulletHitbox: RectangleHitbox(
         position: Vector2(20, 18),
         size: Vector2(24, 28),
+        collisionType: CollisionType.passive,
       ),
       speed: 200,
       travelDistance: bulletTravelDistance,

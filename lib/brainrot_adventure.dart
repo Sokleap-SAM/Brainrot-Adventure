@@ -236,7 +236,10 @@ class BrainrotAdventure extends FlameGame
       case 1:
         overlays.add('LevelGuideOverlay');
         break;
-      case 5:
+      case 2:
+        overlays.add('LevelGuideOverlay');
+        break;
+      case 3:
         overlays.add('LevelGuideOverlay');
         break;
       case 8:

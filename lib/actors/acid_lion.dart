@@ -113,9 +113,7 @@ class AcidLion extends SpriteAnimationGroupComponent
 
   void _fire() {
     Future.delayed(Duration(milliseconds: 1000), () {
-      // Ensure the component is still in the game before proceeding
       if (isMounted && !isRemoved) {
-        // Create and add the bullet after the animation has completed
         final double bulletTravelDistance = firingRangeInTiles * 16;
         Vector2 basePosition = Vector2(position.x, position.y + size.y * 0.5);
         Vector2 bulletPosition = basePosition;
@@ -129,13 +127,12 @@ class AcidLion extends SpriteAnimationGroupComponent
           bulletHitbox: RectangleHitbox(
             position: Vector2(10, 13),
             size: Vector2(44, 38),
+            collisionType: CollisionType.passive,
           ),
           spriteAmount: 2,
           travelDistance: bulletTravelDistance,
         );
         parent?.add(bullet);
-
-        // Switch back to idling animation
         current = EnemyState.idling;
       }
     });

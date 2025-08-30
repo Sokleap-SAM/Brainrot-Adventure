@@ -14,6 +14,10 @@
       {
         "title": "Mission: Collect all the items!",
         "content": "Your mission is to collect all the specific items and get to the flag."
+      },
+      {
+        "title": "Beware: Traps and Enemies",
+        "content": "You have to avoid those or you will lose life"
       }
     ]
   },

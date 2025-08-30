@@ -158,7 +158,7 @@
     <property name="SpriteAmount" type="int" value="1"/>
    </properties>
   </object>
-  <object id="49" name="Player" type="Player" x="64" y="1328" width="64" height="64"/>
+  <object id="49" name="Player" type="Player" x="96" y="1328" width="64" height="64"/>
   <object id="51" name="Saws" type="SummerTraps" x="447" y="1328" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="false"/>

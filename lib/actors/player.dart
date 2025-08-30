@@ -1,6 +1,11 @@
 import 'dart:async';
 
+import 'package:brainrot_adventure/actors/acid_lion.dart';
+import 'package:brainrot_adventure/actors/chubby_buck_tooth.dart';
+import 'package:brainrot_adventure/actors/nuclear_eagle.dart';
+import 'package:brainrot_adventure/actors/two_skulled_bird.dart';
 import 'package:brainrot_adventure/components/audio_manager.dart';
+import 'package:brainrot_adventure/components/bullet.dart';
 import 'package:brainrot_adventure/components/chest.dart';
 import 'package:brainrot_adventure/components/collision_block.dart';
 import 'package:brainrot_adventure/brainrot_adventure.dart';
@@ -286,14 +291,26 @@ class Player extends SpriteAnimationGroupComponent
       if (other is Chest) {
         other.chestCollideWithPlayer();
       }
-      // if (other is Enemy) {
-      //   _respawn();
-      // }
+      if (other is AcidLion) {
+        _respawn();
+      }
+      if (other is ChubbyBuckTooth) {
+        _respawn();
+      }
+      if (other is NuclearEagle) {
+        _respawn();
+      }
+      if (other is TwoSkulledBird) {
+        _respawn();
+      }
+      if (other is Bullet) {
+        other.bulletCollideWithPlayer();
+        _respawn();
+      }
       if (other is Portal) {
         _reachPortal(other.getPortalType());
       }
       if (other is SummerTraps) {
-        // print('Player hit by trap');
         _respawn();
       }
       if (other is SummerObjects) {

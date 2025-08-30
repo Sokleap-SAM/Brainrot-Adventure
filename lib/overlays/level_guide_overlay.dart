@@ -79,7 +79,7 @@ class _LevelGuideOverlayState extends State<LevelGuideOverlay> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        if (_currentPage < _totalPages - 1)
+        if (_currentPage < widget.guideData.length - 1)
           ElevatedButton(
             onPressed: () {
               _pageController.nextPage(
