@@ -50,12 +50,14 @@ class SummerObjects extends SpriteAnimationComponent
       AudioManager.instance.playSfx('collectObject.wav');
       game.updateCollectibleObject(summerobject);
       final level = parent as Level;
+      final chests = level.children.whereType<Chest>().toList();
+      for (var chest in chests) {
+        if (chest.isEmpty) {
+          chest.removeFromParent();
+        }
+      }
 
-      // Find all children of type Chest and remove them
-      level.children.whereType<Chest>().forEach((chest) {
-        chest.removeFromParent();
-        removeFromParent();
-      });
+      removeFromParent();
     }
   }
 }

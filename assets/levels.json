@@ -83,7 +83,7 @@
       "Umbrella": 1
     },
     "timeLimitInSeconds": 400,
-    "maps": ["summer-level7-map1", "summer-level7-mapw"],
+    "maps": ["summer-level7-map1", "summer-level7-map2"],
     "guide": []
   },
     {
