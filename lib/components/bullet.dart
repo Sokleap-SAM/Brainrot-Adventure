@@ -26,7 +26,6 @@ class Bullet extends SpriteAnimationComponent
   Future<void> onLoad() async {
     super.onLoad();
     _startPosition = position.clone();
-    debugMode = true;
     animation = SpriteAnimation.fromFrameData(
       game.images.fromCache('Projectile/$bulletName/Projectiling.png'),
       SpriteAnimationData.sequenced(
@@ -36,6 +35,9 @@ class Bullet extends SpriteAnimationComponent
       ),
     );
     add(bulletHitbox);
+    if (direction.x > 0) {
+      flipHorizontallyAroundCenter();
+    }
   }
 
   @override

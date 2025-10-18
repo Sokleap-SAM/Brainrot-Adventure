@@ -44,6 +44,8 @@ class BrainrotAdventure extends FlameGame
 
   late TextComponent _timerText;
 
+  bool inputEnabled = false;
+
   BrainrotAdventure({
     required this.levelNumber,
     this.onVictory,

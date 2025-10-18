@@ -314,7 +314,7 @@
     <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
-  <object id="75" name="Saws" type="SummerTraps" x="2352" y="848" width="64" height="64">
+  <object id="75" name="Saws" type="SummerTraps" x="2370" y="848" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="leftTile" type="float" value="14"/>
@@ -322,7 +322,7 @@
     <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
-  <object id="76" name="Saws" type="SummerTraps" x="2352" y="784" width="64" height="64">
+  <object id="76" name="Saws" type="SummerTraps" x="2370" y="784" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="leftTile" type="float" value="14"/>
@@ -330,7 +330,7 @@
     <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
-  <object id="77" name="Saws" type="SummerTraps" x="2352" y="720" width="64" height="64">
+  <object id="77" name="Saws" type="SummerTraps" x="2370" y="720" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="leftTile" type="float" value="14"/>
@@ -338,7 +338,7 @@
     <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
-  <object id="78" name="Saws" type="SummerTraps" x="2352" y="656" width="64" height="64">
+  <object id="78" name="Saws" type="SummerTraps" x="2370" y="656" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="leftTile" type="float" value="14"/>
@@ -346,7 +346,7 @@
     <property name="velocity" type="float" value="0"/>
    </properties>
   </object>
-  <object id="79" name="Saws" type="SummerTraps" x="2352" y="592" width="64" height="64">
+  <object id="79" name="Saws" type="SummerTraps" x="2370" y="592" width="64" height="64">
    <properties>
     <property name="isVerticalMovement" type="bool" value="false"/>
     <property name="leftTile" type="float" value="14"/>

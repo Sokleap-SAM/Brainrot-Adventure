@@ -5,8 +5,6 @@ import 'package:brainrot_adventure/components/bullet.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-enum EnemyState { flying, dropping }
-
 class NuclearEagle extends SpriteAnimationComponent
     with HasGameReference<BrainrotAdventure>, CollisionCallbacks {
   double negativeRange;
@@ -34,7 +32,7 @@ class NuclearEagle extends SpriteAnimationComponent
     setTileRange();
     _setEnemyHitBox();
     add(enemyHitBox);
-    animation = _spriteAnimation("Flying", 2, true);
+    animation = _spriteAnimation("Flying", 3, true);
     _fireTimer = Timer(
       _fireInterval,
       onTick: _fire,

@@ -101,6 +101,9 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   bool onKeyEvent(KeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    if (!game.inputEnabled) {
+      return false;
+    }
     _updateHorizontalDirection(keysPressed);
     _handleJumpInput(keysPressed);
     _handleCrouchInput(keysPressed);

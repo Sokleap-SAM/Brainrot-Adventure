@@ -106,7 +106,7 @@
     <property name="isStartingPortal" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="3" name="SandPortal" type="Portal" x="2432" y="1328" width="64" height="64">
+  <object id="3" name="SandPortal" type="Portal" x="2340" y="1328" width="64" height="64">
    <properties>
     <property name="isStartingPortal" type="bool" value="false"/>
    </properties>

@@ -89,7 +89,9 @@
     {
     "levelNumber": 8,
     "objectsToCollect": {
-      "SandCastle": 1
+      "BeachBall": 1,
+      "SandCastle": 1,
+      "Umbrella": 1
     },
     "timeLimitInSeconds": 420,
     "maps": ["summer-level8-map1", "summer-level8-map2", "summer-level8-map3"],

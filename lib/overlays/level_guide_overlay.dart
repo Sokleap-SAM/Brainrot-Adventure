@@ -91,6 +91,7 @@ class _LevelGuideOverlayState extends State<LevelGuideOverlay> {
           ),
         ElevatedButton(
           onPressed: () {
+            widget.game.inputEnabled = true;
             widget.game.overlays.remove('LevelGuideOverlay');
             widget.game.resumeEngine();
             widget.game.startTimer();
