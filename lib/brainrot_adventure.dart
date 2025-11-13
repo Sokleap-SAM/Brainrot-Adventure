@@ -248,6 +248,8 @@ class BrainrotAdventure extends FlameGame
         overlays.add('LevelGuideOverlay');
         break;
       default:
+        resumeEngine();
+        inputEnabled = true;
         startTimer();
         break;
     }
