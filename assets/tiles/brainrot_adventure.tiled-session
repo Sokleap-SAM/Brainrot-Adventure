@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "summer-level8-map3tmx.tmx",
+    "activeFile": "summer-level8-map3.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -135,8 +135,8 @@
             "scale": 0.33,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1280.3030303030305,
-                "y": 722.7272727272725
+                "x": 1280.3030303030303,
+                "y": 721.2121212121212
             }
         },
         "summer-level6-map1.tmx": {
@@ -148,7 +148,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 1280.6666666666665,
-                "y": 720.6666666666667
+                "y": 720
             }
         },
         "summer-level7-map1.tmx": {
@@ -180,11 +180,11 @@
                 2,
                 3
             ],
-            "scale": 1,
+            "scale": 0.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 2129.5,
-                "y": 261.5
+                "x": 2071,
+                "y": 277
             }
         },
         "summer-level8-map2.tmx": {
@@ -192,11 +192,19 @@
                 2,
                 3
             ],
-            "scale": 0.75,
+            "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1927.3333333333333,
-                "y": 1103.3333333333333
+                "x": 837,
+                "y": 407
+            }
+        },
+        "summer-level8-map3.tmx": {
+            "scale": 0.4275,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1280.701754385965,
+                "y": 719.2982456140351
             }
         },
         "summer-level8-map3tmx.tmx": {
@@ -250,8 +258,8 @@
         "summer-level5-map1.tmx",
         "summer-level8-map1.tmx",
         "summer-level8-map2.tmx",
-        "summer-level8-map3tmx.tmx",
-        "summer-level2-map1.tmx"
+        "summer-level2-map1.tmx",
+        "summer-level8-map3.tmx"
     ],
     "project": "brainrot_adventure.tiled-project",
     "property.type": "float",
@@ -264,10 +272,10 @@
         "summer-level8-map1.tmx",
         "summer-level8-map2.tmx",
         "summer-level2-map1.tmx",
+        "summer-level8-map3.tmx",
         "summer-level8-map3tmx.tmx",
         "summer-level-01-map1.tmx",
-        "summer-level-01-map2.tmx",
-        "summer-level7-map2.tmx"
+        "summer-level-01-map2.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
