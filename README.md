@@ -33,7 +33,8 @@ Make sure you have:
 ### How to Run
 
 1. You need to select what device to run (like window or chrome)
-2. You can click on run or debug to run the application.
+2. You have to set your own moveSpeed, gravity, jumpForce, and terminalVelocity in player. dart based on your device performance (default is suitable for 60 FPS)
+3. You can click on run or debug to run the application.
 
 ---
 
@@ -43,7 +44,7 @@ Make sure you have:
 
 - use key "A", "D" to walk left and right
 - use space bar key to jump
-- use key "S" to crounch
+- use key "S" to crouch
 
 ### Goal
 
