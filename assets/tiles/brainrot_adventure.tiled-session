@@ -111,8 +111,8 @@
             "scale": 0.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 1285,
-                "y": 1486
+                "x": 1281,
+                "y": 719
             }
         },
         "summer-level4-map1.tmx": {
@@ -124,7 +124,7 @@
             "selectedLayer": 2,
             "viewCenter": {
                 "x": 1281,
-                "y": 720
+                "y": 719
             }
         },
         "summer-level5-map1.tmx": {
@@ -135,8 +135,8 @@
             "scale": 0.33,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1280.3030303030303,
-                "y": 721.2121212121212
+                "x": 1280.3030303030305,
+                "y": 719.6969696969695
             }
         },
         "summer-level6-map1.tmx": {
@@ -148,7 +148,7 @@
             "selectedLayer": 1,
             "viewCenter": {
                 "x": 1280.6666666666665,
-                "y": 720
+                "y": 720.6666666666667
             }
         },
         "summer-level7-map1.tmx": {
@@ -159,8 +159,8 @@
             "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 2278.5,
-                "y": 912.5
+                "x": 1280.5,
+                "y": 720.5
             }
         },
         "summer-level7-map2.tmx": {
@@ -183,8 +183,8 @@
             "scale": 0.5,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 2071,
-                "y": 277
+                "x": 1281,
+                "y": 719
             }
         },
         "summer-level8-map2.tmx": {
@@ -195,8 +195,8 @@
             "scale": 0.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 837,
-                "y": 407
+                "x": 1281,
+                "y": 719
             }
         },
         "summer-level8-map3.tmx": {
@@ -204,7 +204,7 @@
             "selectedLayer": 0,
             "viewCenter": {
                 "x": 1280.701754385965,
-                "y": 719.2982456140351
+                "y": -635.0877192982456
             }
         },
         "summer-level8-map3tmx.tmx": {
@@ -242,6 +242,12 @@
                 "x": 1163,
                 "y": 366.5
             }
+        },
+        "summer_terrain.tsx": {
+            "scaleInDock": 1
+        },
+        "summerterrain.tsx": {
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "D:/project oop/Brainrot-Adventure/assets/images/Terrain",
